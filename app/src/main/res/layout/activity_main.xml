@@ -23,19 +23,16 @@ tools:context="com.sashafierce.moodsplash.MainActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-
+        android:layout_marginTop="30dp"
         android:text="MoodSplash"
         android:textAlignment="center"
-
-        android:textSize="50sp" />
+        android:textSize="45sp" />
 
     <TextView
         android:id="@+id/caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-
         android:text="Sync your mood with your wallpaper"
         android:textAlignment="center"
 
@@ -46,10 +43,22 @@ tools:context="com.sashafierce.moodsplash.MainActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="mood list"
         android:textAlignment="center"
         android:onClick="editMood"
+        android:textSize="25sp"
+
+        />
+    <Button
+        android:id="@+id/random_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="ramdom"
+        android:textAlignment="center"
+        android:onClick="random"
         android:textSize="25sp"
 
         />
@@ -59,7 +68,7 @@ tools:context="com.sashafierce.moodsplash.MainActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="30dp"
+        android:layout_marginTop="20dp"
         android:text="Settings"
         android:textAlignment="center"
         android:onClick="setting"

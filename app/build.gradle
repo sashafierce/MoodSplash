@@ -26,7 +26,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.google.http-client:google-http-client-gson:1.19.0'
+   // compile 'com.google.android.gms:play-services:7.5.0'
+  //  compile 'com.google.http-client:google-http-client-gson:1.19.0'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile "com.squareup.picasso:picasso:2.4.0"
 }
