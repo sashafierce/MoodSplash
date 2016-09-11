@@ -2,10 +2,13 @@ package com.sashafierce.moodsplash;
 
         import android.app.ProgressDialog;
         import android.app.WallpaperManager;
+        import android.content.Context;
         import android.content.Intent;
         import android.database.Cursor;
         import android.database.sqlite.SQLiteDatabase;
         import android.graphics.Bitmap;
+        import android.net.ConnectivityManager;
+        import android.net.NetworkInfo;
         import android.os.AsyncTask;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
@@ -47,7 +50,13 @@ public class MainActivity extends AppCompatActivity {
     public void random(View view) {
 
         url = "https://source.unsplash.com/random";
-        new SetWallpaperTask().execute();
+        if(isOnline()){
+            new SetWallpaperTask().execute();
+        } else{
+            Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
+
+        }
+
 
     }
     public class SetWallpaperTask extends AsyncTask<String, Void, Bitmap> {
@@ -71,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute (Bitmap result) {
             super.onPostExecute(result);
-
+            progressDialog.dismiss();
             WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
             try {
                 wallpaperManager.setBitmap(result);
@@ -91,6 +100,16 @@ public class MainActivity extends AppCompatActivity {
             progressDialog.setCancelable(false);
             progressDialog.show();
         }
+    }
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()
+                && cm.getActiveNetworkInfo().isAvailable()
+                && cm.getActiveNetworkInfo().isConnected()) {
+            return true;
+        }
+        return false;
     }
 
 }

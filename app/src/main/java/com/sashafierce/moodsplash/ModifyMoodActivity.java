@@ -3,9 +3,12 @@ package com.sashafierce.moodsplash;
 
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -97,8 +100,12 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
                 cursor.close();
 
                 Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
+                if(isOnline()){
+                    new SetWallpaperTask().execute();
+                } else{
+                    Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
 
-                new SetWallpaperTask().execute();
+                }
                 Intent main = new Intent(ModifyMoodActivity.this, MoodListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -158,6 +165,16 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
             progressDialog.setCancelable(false);
             progressDialog.show();
         }
+    }
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()
+                && cm.getActiveNetworkInfo().isAvailable()
+                && cm.getActiveNetworkInfo().isConnected()) {
+            return true;
+        }
+        return false;
     }
 }
 

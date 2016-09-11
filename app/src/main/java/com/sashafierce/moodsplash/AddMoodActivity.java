@@ -2,9 +2,12 @@ package com.sashafierce.moodsplash;
 
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -91,13 +94,7 @@ public class AddMoodActivity extends Activity implements OnClickListener {
                     sb.append("");
                     if(cursor.moveToFirst())
                         sb.append(cursor.getString(cursor.getColumnIndex("subject")) );
-                   /* if (cursor.moveToFirst()){
-                        do{
-                            String data = cursor.getString(cursor.getColumnIndex("subject"));
-                            sb.append(data + ",");
-                        }while(cursor.moveToNext());
-                    }
-                    sb.deleteCharAt(sb.length()-1);*/
+
                     appendUrl = sb.toString();
                     url = baseUrl + appendUrl;
                 }
@@ -106,10 +103,12 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
                 Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
 
+                if(isOnline()){
+                    new SetWallpaperTask().execute();
+                } else{
+                    Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
 
-                //Toast.makeText(getApplicationContext(), "Set wallpaper task called", Toast.LENGTH_LONG).show();
-                new SetWallpaperTask().execute();
-
+                }
                 Intent main = new Intent(AddMoodActivity.this, MoodListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -169,8 +168,6 @@ public class AddMoodActivity extends Activity implements OnClickListener {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
             return result;
         }
 
@@ -197,5 +194,15 @@ public class AddMoodActivity extends Activity implements OnClickListener {
             progressDialog.setCancelable(false);
             progressDialog.show();
         }
+    }
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()
+                && cm.getActiveNetworkInfo().isAvailable()
+                && cm.getActiveNetworkInfo().isConnected()) {
+            return true;
+        }
+        return false;
     }
 }

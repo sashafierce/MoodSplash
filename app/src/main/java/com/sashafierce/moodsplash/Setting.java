@@ -33,7 +33,7 @@ public class Setting extends Activity implements
                                long arg3) {
         // TODO Auto-generated method stub
         String sp1= String.valueOf(s1.getSelectedItem());
-        Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, sp1, Toast.LENGTH_SHORT).show();
         if(sp1.contentEquals("Day(s)")) {
             List<Integer> list = new ArrayList<Integer>();
             for(int i = 1 ; i <= 6 ; i++)    {
