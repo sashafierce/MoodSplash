@@ -1,13 +1,10 @@
 package com.sashafierce.moodsplash;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,11 +12,26 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+      import android.support.v7.app.ActionBarActivity;
+        import android.support.v7.app.AppCompatActivity;
+
+        import android.content.Intent;
+        import android.database.Cursor;
+        import android.os.Bundle;
+        import android.support.v4.widget.SimpleCursorAdapter;
+        import android.support.v7.app.ActionBarActivity;
+        import android.view.Menu;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.AdapterView;
+        import android.widget.ListView;
+        import android.widget.TextView;
+
 public class MoodListActivity extends AppCompatActivity {
 
     final String[] from = new String[] { DatabaseHelper._ID,
-            DatabaseHelper.SUBJECT };
-    final int[] to = new int[] { R.id.id, R.id.title };
+            DatabaseHelper.SUBJECT, DatabaseHelper.DESC };
+    final int[] to = new int[] { R.id.id, R.id.title, R.id.desc };
     private DBManager dbManager;
     private ListView listView;
     private SimpleCursorAdapter adapter;
@@ -28,7 +40,7 @@ public class MoodListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.fragment_empty_list);
+        setContentView(R.layout.fragment_emp_list);
         Intent intent = getIntent();
 
         dbManager = new DBManager(this);
@@ -38,7 +50,7 @@ public class MoodListActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list_view);
         listView.setEmptyView(findViewById(R.id.empty));
 
-        adapter = new SimpleCursorAdapter(this, R.layout.activity_view_mood, cursor, from, to, 0);
+        adapter = new SimpleCursorAdapter(this, R.layout.activity_view_record, cursor, from, to, 0);
         adapter.notifyDataSetChanged();
 
         listView.setAdapter(adapter);
@@ -49,13 +61,15 @@ public class MoodListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
                 TextView idTextView = (TextView) view.findViewById(R.id.id);
                 TextView titleTextView = (TextView) view.findViewById(R.id.title);
-
+                TextView descTextView = (TextView) view.findViewById(R.id.desc);
 
                 String id = idTextView.getText().toString();
                 String title = titleTextView.getText().toString();
+                String desc = descTextView.getText().toString();
 
-                Intent modify_intent = new Intent(getApplicationContext(), DeleteMoodActivity.class);
+                Intent modify_intent = new Intent(getApplicationContext(), ModifyMoodActivity.class);
                 modify_intent.putExtra("title", title);
+                modify_intent.putExtra("desc", desc);
                 modify_intent.putExtra("id", id);
 
                 startActivity(modify_intent);
@@ -73,7 +87,7 @@ public class MoodListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-        if (id == R.id.add_mood) {
+        if (id == R.id.add_record) {
 
             Intent add_mem = new Intent(this, AddMoodActivity.class);
             startActivity(add_mem);
@@ -83,3 +97,4 @@ public class MoodListActivity extends AppCompatActivity {
     }
 
 }
+

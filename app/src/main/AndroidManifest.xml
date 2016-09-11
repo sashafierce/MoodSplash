@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sashafierce.moodsplash">
 
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +21,7 @@
         <activity android:name=".MoodListActivity" />
         <activity android:name=".Setting" />
         <activity android:name=".AddMoodActivity" />
-        <activity android:name=".DeleteMoodActivity"></activity>
+        <activity android:name=".ModifyMoodActivity" />
     </application>
 
 </manifest>
