@@ -1,23 +1,42 @@
 package com.sashafierce.moodsplash;
 
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.ProgressDialog;
+import android.app.WallpaperManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
 
 public class ModifyMoodActivity extends Activity implements OnClickListener {
 
     private EditText titleText;
     private Button updateBtn, deleteBtn;
-    private EditText descText;
+    Bitmap result;
+    String appendUrl;
+    String url;
+    StringBuilder sb;
+    String baseUrl = "https://source.unsplash.com/600x750/?";
+    ProgressDialog progressDialog;
+
+    Cursor cursor;
+
+    private DatabaseHelper databaseHelper;
     private long _id;
     private DBManager dbManager;
 
@@ -27,13 +46,14 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
 
         setTitle("Modify Record");
 
-        setContentView(R.layout.activity_modify_record);
-
+        setContentView(R.layout.activity_modify_mood);
+        sb = new StringBuilder();
         dbManager = new DBManager(this);
         dbManager.open();
 
+        databaseHelper = new DatabaseHelper(this);
+
         titleText = (EditText) findViewById(R.id.subject_edittext);
-        descText = (EditText) findViewById(R.id.description_edittext);
 
         updateBtn = (Button) findViewById(R.id.btn_update);
         deleteBtn = (Button) findViewById(R.id.btn_delete);
@@ -41,12 +61,11 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         String name = intent.getStringExtra("title");
-        String desc = intent.getStringExtra("desc");
+
 
         _id = Long.parseLong(id);
 
         titleText.setText(name);
-        descText.setText(desc);
 
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
@@ -57,10 +76,33 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.btn_update:
                 String title = titleText.getText().toString();
-                String desc = descText.getText().toString();
 
-                dbManager.update(_id, title, desc);
-                this.returnHome();
+                dbManager.update(_id, title);
+                SQLiteDatabase db = databaseHelper.getReadableDatabase();
+                String query =  "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
+                Log.d("Query " ,query);
+                // Toast.makeText(getApplicationContext(), query , Toast.LENGTH_LONG).show();
+                cursor = db.rawQuery(query,null);
+
+                if (cursor != null) {
+                    cursor.moveToFirst();
+                    sb = new StringBuilder();
+                    sb.append("");
+                    if(cursor.moveToFirst())
+                        sb.append(cursor.getString(cursor.getColumnIndex("subject")) );
+                    appendUrl = sb.toString();
+                    url = baseUrl + appendUrl;
+                }
+                else url = "https://source.unsplash.com/random";
+                cursor.close();
+
+                Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
+
+                new SetWallpaperTask().execute();
+                Intent main = new Intent(ModifyMoodActivity.this, MoodListActivity.class)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                startActivity(main);
                 break;
 
             case R.id.btn_delete:
@@ -74,6 +116,48 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
         Intent home_intent = new Intent(getApplicationContext(), MoodListActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(home_intent);
+    }
+    public class SetWallpaperTask extends AsyncTask <String, Void, Bitmap> {
+
+        @Override
+        protected Bitmap doInBackground(String... params) {
+            Bitmap result= null;
+
+            try {
+                result = Picasso.with(getApplicationContext())
+                        .load(url)
+                        .get();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute (Bitmap result) {
+            super.onPostExecute(result);
+
+            WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
+            try {
+                wallpaperManager.setBitmap(result);
+
+                Toast.makeText(getApplicationContext(), "Set wallpaper successfully", Toast.LENGTH_LONG).show();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        @Override
+        protected void onPreExecute () {
+            super.onPreExecute();
+
+            progressDialog = new ProgressDialog(ModifyMoodActivity.this);
+            progressDialog.setMessage("Please wait...");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        }
     }
 }
 

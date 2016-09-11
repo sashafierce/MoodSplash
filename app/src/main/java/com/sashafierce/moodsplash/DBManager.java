@@ -33,15 +33,15 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(String name, String desc) {
+    public void insert(String name) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.SUBJECT, name);
-        contentValue.put(DatabaseHelper.DESC, desc);
+      //  contentValue.put(DatabaseHelper.DESC, desc);
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 
     public Cursor fetch() {
-        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC };
+        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.SUBJECT};
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -49,10 +49,10 @@ public class DBManager {
         return cursor;
     }
 
-    public int update(long _id, String name, String desc) {
+    public int update(long _id, String name) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.SUBJECT, name);
-        contentValues.put(DatabaseHelper.DESC, desc);
+       // contentValues.put(DatabaseHelper.DESC, desc);
         int i = database.update(DatabaseHelper.TABLE_NAME, contentValues, DatabaseHelper._ID + " = " + _id, null);
         return i;
     }

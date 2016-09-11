@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="enter title"
+        android:layout_marginTop="40dp"
         android:inputType="textCapSentences">
 
         <requestFocus />
@@ -21,7 +22,8 @@
         android:id="@+id/add_record"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:layout_gravity="center"
-        android:text="add record" />
+        android:text="add mood" />
 
 </LinearLayout>

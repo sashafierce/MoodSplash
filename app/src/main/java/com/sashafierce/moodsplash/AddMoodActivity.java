@@ -2,18 +2,14 @@ package com.sashafierce.moodsplash;
 
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,17 +22,15 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.IOException;
-import java.net.URL;
 
 public class AddMoodActivity extends Activity implements OnClickListener {
 
     private Button addTodoBtn;
     private EditText subjectEditText;
-    private EditText descEditText;
+
     private Target target;
     Bitmap result;
     String appendUrl;
@@ -60,10 +54,10 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
         setTitle("Add Record");
 
-        setContentView(R.layout.activity_add_record);
+        setContentView(R.layout.activity_add_mood);
 
         subjectEditText = (EditText) findViewById(R.id.subject_edittext);
-        descEditText = (EditText) findViewById(R.id.description_edittext);
+
         sb = new StringBuilder();
         addTodoBtn = (Button) findViewById(R.id.add_record);
 
@@ -82,9 +76,9 @@ public class AddMoodActivity extends Activity implements OnClickListener {
             case R.id.add_record:
 
                 final String name = subjectEditText.getText().toString();
-                final String desc = descEditText.getText().toString();
 
-                dbManager.insert(name, desc);
+
+                dbManager.insert(name);
                 SQLiteDatabase db = databaseHelper.getReadableDatabase();
                 String query =  "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
                 Log.d("Query " ,query);

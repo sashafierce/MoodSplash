@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MoodSplash</string>
+    <string-array name="frequency_type">
+        <item>Hour(s)</item>
+        <item>Day(s)</item>
+        <item>Week(s)</item>
+
+    </string-array>
+    <string-array name="quality">
+        <item>High</item>
+        <item>Standard</item>
+    </string-array>
 </resources>
