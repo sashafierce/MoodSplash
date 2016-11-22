@@ -1,5 +1,7 @@
 package com.sashafierce.moodsplash;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
 import android.content.Context;
@@ -28,6 +30,8 @@ import com.squareup.picasso.Target;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.GregorianCalendar;
 
 public class AddMoodActivity extends Activity implements OnClickListener {
 
@@ -43,12 +47,10 @@ public class AddMoodActivity extends Activity implements OnClickListener {
     ProgressDialog progressDialog;
     private DBManager dbManager;
     Cursor cursor;
-
+    SetWallpaper setWallpaperTask;
+   // AlarmReceiver ar;
     private DatabaseHelper databaseHelper;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+
     private GoogleApiClient client;
 
     @Override
@@ -68,8 +70,9 @@ public class AddMoodActivity extends Activity implements OnClickListener {
         databaseHelper = new DatabaseHelper(this);
         dbManager.open();
         addTodoBtn.setOnClickListener(this);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
+
+        setWallpaperTask = new SetWallpaper(getApplicationContext() , getBaseContext() , this);
+
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -80,12 +83,10 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
                 final String name = subjectEditText.getText().toString();
 
-
                 dbManager.insert(name);
                 SQLiteDatabase db = databaseHelper.getReadableDatabase();
                 String query =  "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
                 Log.d("Query " ,query);
-                // Toast.makeText(getApplicationContext(), query , Toast.LENGTH_LONG).show();
                 cursor = db.rawQuery(query,null);
 
                 if (cursor != null) {
@@ -104,7 +105,9 @@ public class AddMoodActivity extends Activity implements OnClickListener {
                 Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
 
                 if(isOnline()){
-                    new SetWallpaperTask().execute();
+
+                    setWallpaperTask.url = url;
+                    setWallpaperTask.execute();
                 } else{
                     Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
 
@@ -155,46 +158,6 @@ public class AddMoodActivity extends Activity implements OnClickListener {
         client.disconnect();
     }
 
-    public class SetWallpaperTask extends AsyncTask <String, Void, Bitmap> {
-
-        @Override
-        protected Bitmap doInBackground(String... params) {
-            Bitmap result= null;
-
-            try {
-                result = Picasso.with(getApplicationContext())
-                        .load(url)
-                        .get();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute (Bitmap result) {
-            super.onPostExecute(result);
-
-            WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
-            try {
-                wallpaperManager.setBitmap(result);
-
-                Toast.makeText(getApplicationContext(), "Set wallpaper successfully", Toast.LENGTH_LONG).show();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        @Override
-        protected void onPreExecute () {
-            super.onPreExecute();
-
-            progressDialog = new ProgressDialog(AddMoodActivity.this);
-            progressDialog.setMessage("Please wait...");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
-        }
-    }
     public boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();

@@ -34,6 +34,7 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
     String appendUrl;
     String url;
     StringBuilder sb;
+    int length , height ;
     String baseUrl = "https://source.unsplash.com/600x750/?";
     ProgressDialog progressDialog;
 
@@ -42,7 +43,7 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
     private DatabaseHelper databaseHelper;
     private long _id;
     private DBManager dbManager;
-
+    SetWallpaper setWallpaperTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +73,7 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
 
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
+        setWallpaperTask = new SetWallpaper(getApplicationContext() , getBaseContext() , this);
     }
 
     @Override
@@ -101,7 +103,8 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
 
                 Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
                 if(isOnline()){
-                    new SetWallpaperTask().execute();
+                    setWallpaperTask.url = url;
+                    setWallpaperTask.execute();
                 } else{
                     Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
 
@@ -124,48 +127,7 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(home_intent);
     }
-    public class SetWallpaperTask extends AsyncTask <String, Void, Bitmap> {
 
-        @Override
-        protected Bitmap doInBackground(String... params) {
-            Bitmap result= null;
-
-            try {
-                result = Picasso.with(getApplicationContext())
-                        .load(url)
-                        .get();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute (Bitmap result) {
-            super.onPostExecute(result);
-
-            WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
-            try {
-                wallpaperManager.setBitmap(result);
-
-                Toast.makeText(getApplicationContext(), "Set wallpaper successfully", Toast.LENGTH_LONG).show();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        @Override
-        protected void onPreExecute () {
-            super.onPreExecute();
-
-            progressDialog = new ProgressDialog(ModifyMoodActivity.this);
-            progressDialog.setMessage("Please wait...");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
-        }
-    }
     public boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();

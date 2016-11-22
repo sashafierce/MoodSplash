@@ -29,14 +29,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="update" />
+            android:padding="12dp"
+            style="?android:textAppearanceSmall"
+            android:textSize="20sp"
+            android:layout_marginRight="2dp"
+            android:background="@color/btn_logut_bg"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="SAVE" />
 
         <Button
             android:id="@+id/btn_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="delete" />
+            android:padding="12dp"
+            style="?android:textAppearanceSmall"
+            android:textSize="20sp"
+            android:layout_marginLeft="2dp"
+            android:background="@color/btn_logut_bg"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="delete"
+            android:textAllCaps="true"/>
     </LinearLayout>
 
 </LinearLayout>

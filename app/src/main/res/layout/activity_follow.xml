@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Term"
+        android:hint="User's Email"
         android:layout_marginTop="40dp"
         android:inputType="textCapSentences">
 
@@ -30,7 +30,7 @@
         android:background="@color/btn_logut_bg"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:text="add mood"
+        android:text="Import list"
         android:textAllCaps="true"/>
 
 </LinearLayout>

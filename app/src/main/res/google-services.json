@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "648693624724",
+    "firebase_url": "https://moodsplash-e977d.firebaseio.com",
+    "project_id": "moodsplash-e977d",
+    "storage_bucket": "moodsplash-e977d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648693624724:android:985c00cb662cd5c1",
+        "android_client_info": {
+          "package_name": "com.sashafierce.moodsplash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648693624724-tn8udfgpr8v9fggmm1cdefgjnai4vsis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
