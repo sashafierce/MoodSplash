@@ -1,0 +1,23 @@
+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¢†ºýÿÿÿÿÿ8ÿ¥íŠ‰+
+msquid:S1450"XRemove the "updateBtn" field and declare it as a local variable in the relevant methods.(œû˜–
+‹squid:S1151"jReduce this switch case number of lines from 18 to at most 5, for example by extracting code into methods.(ó×±æþÿÿÿÿ8îåàŠ‰+
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ8îåàŠ‰+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–ÍûÊ8¹´ìŠ‰+
+[squid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8í¶îŠ‰+
+Esquid:S1659"$Declare "height" on a separate line.(ŠÿÞêüÿÿÿÿ8îåàŠ‰+
+<squid:S1659"'Declare "deleteBtn" on a separate line.(œû˜–
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ8îåàŠ‰+
+Isquid:S1068"-Remove this unused "titleText" private field.(Ñçåÿ8Ð¼óŠ‰+
+msquid:S1450"XRemove the "deleteBtn" field and declare it as a local variable in the relevant methods.(œû˜–
+ksquid:S00116"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬«îõ8îåàŠ‰+
+Ssquid:UselessImportCheck"1Remove this unused import 'android.os.AsyncTask'.(À»¥—
+ksquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿±Š
+Wsquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ
+ysquid:S1450"]Remove the "databaseHelper" field and declare it as a local variable in the relevant methods.(–Ø¯8í¶îŠ‰+
+qsquid:UselessImportCheck"CRemove this unused import 'android.database.sqlite.SQLiteDatabase'.(ãµèÈùÿÿÿÿ8í¶îŠ‰+
+Nsquid:S1068"2Remove this unused "databaseHelper" private field.(–Ø¯8í¶îŠ‰+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÚÊ¨ýÿÿÿÿ8Ð¼óŠ‰+
+[squid:UselessImportCheck"9Remove this unused import 'com.squareup.picasso.Picasso'.(£œ¿×
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ò¼öÉ8¡ÍîŠ‰+
+Zsquid:UselessImportCheck"9Remove this unused import 'android.app.WallpaperManager'.(÷¡ï

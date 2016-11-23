@@ -3,15 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <item
-        android:id="@+id/sign_out"
-        android:icon="@android:drawable/ic_menu_add"
+        android:id="@+id/shuffle"
         android:orderInCategory="100"
-        android:title="Sign Out"
-        app:showAsAction="never"/>
+        android:title="Shuffle"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/rate_app"
         android:icon="@android:drawable/ic_menu_add"
         android:orderInCategory="100"
         android:title="Rate App"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/sign_out"
+        android:icon="@android:drawable/ic_menu_add"
+        android:orderInCategory="100"
+        android:title="Sign Out"
+        app:showAsAction="never"/>
+
 </menu>

@@ -1,0 +1,5 @@
+
+Usquid:S1854"9Remove this useless assignment to local variable "email".(ñ‹—È8æïÑ‰‰+
+tsquid:S00116"RRename this field "ETemail" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëúÏŒÿÿÿÿÿ8µäÐ‰‰+
+Fsquid:S1481"*Remove this unused "email" local variable.(ñ‹—È8æïÑ‰‰+
+lsquid:UselessImportCheck"ERemove this unused import 'android.support.v7.app.AppCompatActivity'.(«Û®ûüÿÿÿÿ

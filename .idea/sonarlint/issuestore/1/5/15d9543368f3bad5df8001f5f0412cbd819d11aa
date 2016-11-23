@@ -1,0 +1,20 @@
+
+Csquid:S1481")Remove this unused "user" local variable.(Æ½ì›ûÿÿÿÿ
+esquid:HiddenFieldCheck"@Rename "authListener" which hides the field declared at line 45.(ÙÖÌšÿÿÿÿÿ
+]squid:S2259"ANullPointerException might be thrown as 'cursor' is nullable here(®¶ëü8ÔïªŠ‰+
+:squid:S1166"%Either log or rethrow this exception.(Ãôþ•
+8squid:S1148"#Use a logger to log this exception.(Ç’Çê
+csquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(²Ú±Ž
+Zsquid:HiddenFieldCheck":Rename "result" which hides the field declared at line 33.(³ýþØ
+Esquid:S1659"$Declare "height" on a separate line.(ŠÿÞêüÿÿÿÿ8ÔïªŠ‰+
+ksquid:S00116"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬«îõ8ÔïªŠ‰+
+Jsquid:S1068"0Remove this unused "authListener" private field.(ðÏÿŸøÿÿÿÿ
+Ysquid:UselessImportCheck"2Remove this unused import 'android.widget.Button'.(²òžýÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(®¿¾À
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+Rsquid:S1854"8Remove this useless assignment to local variable "user".(Æ½ì›ûÿÿÿÿ
+:squid:S1166"%Either log or rethrow this exception.(ï­£Ä
+Vsquid:UselessImportCheck"4Remove this unused import 'android.widget.EditText'.(†Å›Ú
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¦‚Ê‚8Ä¥Š‰+
+Csquid:S1068"'Remove this unused "_id" private field.(¬«îõ8‚’­Š‰+
+tsquid:S1450"XRemove the "dbManager" field and declare it as a local variable in the relevant methods.(Žã€°8‚’­Š‰+

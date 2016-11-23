@@ -12,6 +12,7 @@
         android:ems="10"
         android:hint="User's Email"
         android:layout_marginTop="40dp"
+
         android:inputType="textCapSentences">
 
         <requestFocus />
@@ -31,6 +32,7 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:text="Import list"
+        android:onClick="importList"
         android:textAllCaps="true"/>
 
 </LinearLayout>

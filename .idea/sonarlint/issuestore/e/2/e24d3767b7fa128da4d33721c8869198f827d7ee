@@ -1,0 +1,24 @@
+
+Xsquid:UselessImportCheck"6Remove this unused import 'android.app.PendingIntent'.(šºŞ—
+Vsquid:S2259"ANullPointerException might be thrown as 'cursor' is nullable here(®¶ëü
+?squid:S1068"*Remove this unused "target" private field.(Öß¯
+nsquid:S1450"YRemove the "addTodoBtn" field and declare it as a local variable in the relevant methods.(„Šç¦
+Lsquid:S1135"2Complete the task associated to this TODO comment.(Ãá•şÿÿÿÿ
+esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ
+Gsquid:S1135"2Complete the task associated to this TODO comment.(ÂÍÄ×
+Gsquid:S1135"2Complete the task associated to this TODO comment.(Ú•õµ
+Lsquid:S1135"2Complete the task associated to this TODO comment.(Ãá•şÿÿÿÿ
+Zsquid:UselessImportCheck"9Remove this unused import 'android.app.WallpaperManager'.(÷¡ï
+Xsquid:UselessImportCheck"1Remove this unused import 'java.io.Serializable'.(èãîÂÿÿÿÿÿ
+Ssquid:UselessImportCheck"1Remove this unused import 'android.os.AsyncTask'.(À»¥—
+Lsquid:S1135"2Complete the task associated to this TODO comment.(€±ıÿÿÿÿ
+Gsquid:S1135"2Complete the task associated to this TODO comment.(Ú•õµ
+„squid:S1151"jReduce this switch case number of lines from 36 to at most 5, for example by extracting code into methods.(ÚÙıÿÿÿÿ
+Zsquid:UselessImportCheck"8Remove this unused import 'java.util.GregorianCalendar'.(€û½
+\squid:UselessImportCheck"5Remove this unused import 'android.app.AlarmManager'.(°­éıÿÿÿÿ
+Gsquid:S1135"2Complete the task associated to this TODO comment.(ÂÍÄ×
+[squid:UselessImportCheck"9Remove this unused import 'com.squareup.picasso.Picasso'.(£œ¿×
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ
+Lsquid:S1135"2Complete the task associated to this TODO comment.(€±ıÿÿÿÿ
+Wsquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ò¼öÉ8Åş×Š‰+

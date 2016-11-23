@@ -37,7 +37,7 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
     int length , height ;
     String baseUrl = "https://source.unsplash.com/600x750/?";
     ProgressDialog progressDialog;
-
+    String term;
     Cursor cursor;
 
     private DatabaseHelper databaseHelper;
@@ -57,19 +57,18 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
 
         databaseHelper = new DatabaseHelper(this);
 
-        titleText = (EditText) findViewById(R.id.subject_edittext);
+       // titleText = (EditText) findViewById(R.id.subject_edittext);
 
         updateBtn = (Button) findViewById(R.id.btn_update);
         deleteBtn = (Button) findViewById(R.id.btn_delete);
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
-        String name = intent.getStringExtra("title");
-
+        term = intent.getStringExtra("title");
 
         _id = Long.parseLong(id);
 
-        titleText.setText(name);
+      //  titleText.setText(name);
 
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
@@ -80,28 +79,11 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_update:
-                String title = titleText.getText().toString();
+               // String title = titleText.getText().toString();
 
-                dbManager.update(_id, title);
-                SQLiteDatabase db = databaseHelper.getReadableDatabase();
-                String query =  "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
-                Log.d("Query " ,query);
-                // Toast.makeText(getApplicationContext(), query , Toast.LENGTH_LONG).show();
-                cursor = db.rawQuery(query,null);
+                url = baseUrl + term;
 
-                if (cursor != null) {
-                    cursor.moveToFirst();
-                    sb = new StringBuilder();
-                    sb.append("");
-                    if(cursor.moveToFirst())
-                        sb.append(cursor.getString(cursor.getColumnIndex("subject")) );
-                    appendUrl = sb.toString();
-                    url = baseUrl + appendUrl;
-                }
-                else url = "https://source.unsplash.com/random";
-                cursor.close();
-
-                Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
                 if(isOnline()){
                     setWallpaperTask.url = url;
                     setWallpaperTask.execute();

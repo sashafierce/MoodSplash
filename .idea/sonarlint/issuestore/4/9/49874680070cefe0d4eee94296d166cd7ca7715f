@@ -1,0 +1,11 @@
+
+msquid:S1450"XRemove the "dbManager" field and declare it as a local variable in the relevant methods.(Žã€°
+;squid:S1170"!Make this final field static too.(°×´ºþÿÿÿÿ
+Osquid:S1854":Remove this useless assignment to local variable "intent".(å¯Ô«
+hsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(£´Òñýÿÿÿÿ
+6squid:S1170"!Make this final field static too.(óÞÏ³
+psquid:S1450"VRemove the "adapter" field and declare it as a local variable in the relevant methods.(ÃåùÖûÿÿÿÿ
+lsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©®õâ
+@squid:S1481"+Remove this unused "intent" local variable.(å¯Ô«
+qsquid:S1450"WRemove the "listView" field and declare it as a local variable in the relevant methods.(¯¤½ñûÿÿÿÿ
+qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½¿ƒóýÿÿÿÿ

@@ -32,6 +32,15 @@ package com.sashafierce.moodsplash;
 public class MainActivity extends AppCompatActivity {
     Bitmap result;
     String url;
+    StringBuilder sb;
+    String appendUrl;
+    int length , height ;
+    String baseUrl = "https://source.unsplash.com/600x750/?";
+    Cursor cursor;
+
+    private DatabaseHelper databaseHelper;
+    private long _id;
+    private DBManager dbManager;
     ProgressDialog progressDialog;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
@@ -44,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        dbManager = new DBManager(this);
+        dbManager.open();
+
+        databaseHelper = new DatabaseHelper(this);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,6 +119,33 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
             auth.addAuthStateListener(authListener);
+
+        }
+        else if(id == R.id.shuffle) {
+
+            SQLiteDatabase db = databaseHelper.getReadableDatabase();
+            String query =  "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
+            Log.d("Query " ,query);
+            // Toast.makeText(getApplicationContext(), query , Toast.LENGTH_LONG).show();
+            cursor = db.rawQuery(query,null);
+
+            if (cursor != null) {
+                cursor.moveToFirst();
+                sb = new StringBuilder();
+                sb.append("");
+                if(cursor.moveToFirst())
+                    sb.append(cursor.getString(cursor.getColumnIndex("subject")) );
+                appendUrl = sb.toString();
+                url = baseUrl + appendUrl;
+            }
+            else url = "https://source.unsplash.com/random";
+            cursor.close();
+            if(isOnline()){
+                new SetWallpaperTask().execute();
+            } else{
+                Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
+
+            }
 
         }
         return super.onOptionsItemSelected(item);

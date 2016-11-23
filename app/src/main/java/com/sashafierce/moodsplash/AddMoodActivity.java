@@ -35,20 +35,18 @@ import java.util.GregorianCalendar;
 
 public class AddMoodActivity extends Activity implements OnClickListener {
 
-    private Button addTodoBtn;
-    private EditText subjectEditText;
-
-    private Target target;
     Bitmap result;
     String appendUrl;
     String url;
     StringBuilder sb;
     String baseUrl = "https://source.unsplash.com/600x750/?";
     ProgressDialog progressDialog;
-    private DBManager dbManager;
     Cursor cursor;
     SetWallpaper setWallpaperTask;
-   // AlarmReceiver ar;
+    private Button addTodoBtn;
+    private EditText subjectEditText;
+    private Target target;
+    private DBManager dbManager;
     private DatabaseHelper databaseHelper;
 
     private GoogleApiClient client;
@@ -71,7 +69,7 @@ public class AddMoodActivity extends Activity implements OnClickListener {
         dbManager.open();
         addTodoBtn.setOnClickListener(this);
 
-        setWallpaperTask = new SetWallpaper(getApplicationContext() , getBaseContext() , this);
+        setWallpaperTask = new SetWallpaper(getApplicationContext(), getBaseContext(), this);
 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
@@ -85,31 +83,30 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
                 dbManager.insert(name);
                 SQLiteDatabase db = databaseHelper.getReadableDatabase();
-                String query =  "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
-                Log.d("Query " ,query);
-                cursor = db.rawQuery(query,null);
+                String query = "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
+                Log.d("Query ", query);
+                cursor = db.rawQuery(query, null);
 
                 if (cursor != null) {
                     cursor.moveToFirst();
                     sb = new StringBuilder();
                     sb.append("");
-                    if(cursor.moveToFirst())
-                        sb.append(cursor.getString(cursor.getColumnIndex("subject")) );
+                    if (cursor.moveToFirst())
+                        sb.append(cursor.getString(cursor.getColumnIndex("subject")));
 
                     appendUrl = sb.toString();
                     url = baseUrl + appendUrl;
-                }
-                else url = "https://source.unsplash.com/random";
+                } else url = "https://source.unsplash.com/random";
                 cursor.close();
 
-                Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
 
-                if(isOnline()){
+                if (isOnline()) {
 
                     setWallpaperTask.url = url;
                     setWallpaperTask.execute();
-                } else{
-                    Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error Connecting to server", Toast.LENGTH_LONG).show();
 
                 }
                 Intent main = new Intent(AddMoodActivity.this, MoodListActivity.class)

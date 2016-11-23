@@ -9,7 +9,7 @@
     tools:context="com.sashafierce.moodsplash.MainActivity"
     android:layout_alignParentLeft="true"
     android:layout_alignParentTop="true"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/bg_main"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -23,7 +23,7 @@
             android:text="MoodSplash"
             android:textAlignment="center"
             android:textSize="36sp"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/btn_logut_bg"
             android:textStyle="bold"
             style="?android:textAppearanceSmall" />
 
