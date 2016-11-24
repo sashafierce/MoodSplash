@@ -25,7 +25,7 @@
             style="?android:textAppearanceSmall"
             android:textSize="20sp"
             android:layout_marginRight="2dp"
-            android:background="@color/btn_logut_bg"
+            android:background="@color/colorPrimary"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:text="SET NOW" />
@@ -39,7 +39,7 @@
             style="?android:textAppearanceSmall"
             android:textSize="20sp"
             android:layout_marginLeft="2dp"
-            android:background="@color/btn_logut_bg"
+            android:background="@color/colorPrimaryDark"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:text="delete"

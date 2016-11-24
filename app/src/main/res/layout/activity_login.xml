@@ -16,18 +16,12 @@
         android:padding="@dimen/activity_horizontal_margin">
 
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="@dimen/logo_w_h"
+            android:layout_height="@dimen/logo_w_h"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:text="MoodSplash"
-            android:textAlignment="center"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            style="?android:textAppearanceSmall" />
-
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/ic_launcher" />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -65,7 +59,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-
             android:background="@color/colorPrimaryDark"
             android:text="@string/btn_login"
             android:textColor="@android:color/white" />
@@ -76,9 +69,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
             android:background="@null"
+            android:textSize="15dp"
             android:text="@string/btn_forgot_password"
             android:textAllCaps="false"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/white" />
 
         <!-- Link to Login Screen -->
 
@@ -88,9 +82,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dip"
             android:background="@null"
-            android:text="@string/btn_link_to_register"
+            android:text="No account yet? Create one"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@android:color/black"
             android:textSize="15dp" />
     </LinearLayout>
 

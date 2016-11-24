@@ -1,24 +1,31 @@
 
-Xsquid:UselessImportCheck"6Remove this unused import 'android.app.PendingIntent'.(šºŞ—
-Vsquid:S2259"ANullPointerException might be thrown as 'cursor' is nullable here(®¶ëü
-?squid:S1068"*Remove this unused "target" private field.(Öß¯
 nsquid:S1450"YRemove the "addTodoBtn" field and declare it as a local variable in the relevant methods.(„Šç¦
+qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Æ¨ 8º«…™‰+
 Lsquid:S1135"2Complete the task associated to this TODO comment.(Ãá•şÿÿÿÿ
-esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ
-Gsquid:S1135"2Complete the task associated to this TODO comment.(ÂÍÄ×
 Gsquid:S1135"2Complete the task associated to this TODO comment.(Ú•õµ
-Lsquid:S1135"2Complete the task associated to this TODO comment.(Ãá•şÿÿÿÿ
+Vsquid:S2209"5Change this instance-reference to a static reference.(úÑÙ×úÿÿÿÿ8ïª¦‰+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(óæøÄüÿÿÿÿ8Ìàƒ—‰+
+S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ
+Gsquid:S1135"2Complete the task associated to this TODO comment.(ÂÍÄ×
+=squid:S1643"Use a StringBuilder instead.(Õ‘æÀúÿÿÿÿ8º«…™‰+
+Gsquid:S1135"2Complete the task associated to this TODO comment.(ÂÍÄ×
 Zsquid:UselessImportCheck"9Remove this unused import 'android.app.WallpaperManager'.(÷¡ï
 Xsquid:UselessImportCheck"1Remove this unused import 'java.io.Serializable'.(èãîÂÿÿÿÿÿ
-Ssquid:UselessImportCheck"1Remove this unused import 'android.os.AsyncTask'.(À»¥—
-Lsquid:S1135"2Complete the task associated to this TODO comment.(€±ıÿÿÿÿ
-Gsquid:S1135"2Complete the task associated to this TODO comment.(Ú•õµ
-„squid:S1151"jReduce this switch case number of lines from 36 to at most 5, for example by extracting code into methods.(ÚÙıÿÿÿÿ
-Zsquid:UselessImportCheck"8Remove this unused import 'java.util.GregorianCalendar'.(€û½
+?squid:S1068"*Remove this unused "target" private field.(Öß¯
+ squid:MethodCyclomaticComplexity"]The Cyclomatic Complexity of this method "onClick" is 14 which is greater than 10 authorized.(¡é††8º«…™‰+
 \squid:UselessImportCheck"5Remove this unused import 'android.app.AlarmManager'.(°­éıÿÿÿÿ
-Gsquid:S1135"2Complete the task associated to this TODO comment.(ÂÍÄ×
-[squid:UselessImportCheck"9Remove this unused import 'com.squareup.picasso.Picasso'.(£œ¿×
-S"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ
 Lsquid:S1135"2Complete the task associated to this TODO comment.(€±ıÿÿÿÿ
-Wsquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
+Lsquid:S1135"2Complete the task associated to this TODO comment.(€±ıÿÿÿÿ
 gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ò¼öÉ8Åş×Š‰+
+vsquid:S1067"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8º«…™‰+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ôÃãıÿÿÿÿ8Ä’Ä˜‰+
+Lsquid:S1135"2Complete the task associated to this TODO comment.(Ãá•şÿÿÿÿ
+„squid:S1151"jReduce this switch case number of lines from 59 to at most 5, for example by extracting code into methods.(ÚÙıÿÿÿÿ
+esquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ
+Xsquid:UselessImportCheck"6Remove this unused import 'android.app.PendingIntent'.(šºŞ—
+Zsquid:UselessImportCheck"8Remove this unused import 'java.util.GregorianCalendar'.(€û½
+Ksquid:EmptyStatementUsageCheck"Remove this empty statement.(óÜ¾’8º«…™‰+
+Wsquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
+Gsquid:S1135"2Complete the task associated to this TODO comment.(Ú•õµ
+[squid:UselessImportCheck"9Remove this unused import 'com.squareup.picasso.Picasso'.(£œ¿×
+Ssquid:UselessImportCheck"1Remove this unused import 'android.os.AsyncTask'.(À»¥—

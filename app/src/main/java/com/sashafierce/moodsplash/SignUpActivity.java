@@ -56,7 +56,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = inputEmail.getText().toString().trim();
+                final String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
@@ -89,6 +89,17 @@ public class SignUpActivity extends AppCompatActivity {
                                     Toast.makeText(SignUpActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
+                                    String username = "";
+                                    for (int i=0; i<email.length(); i++) {
+                                        char c = email.charAt(i);
+
+                                        if(c == '@') break;
+                                        if(c == '.' || c == '#' || c == '$' || c == '[' || c == ']' ) ;
+                                        else username += Character.toString(c); ;
+
+                                    }
+                                    Toast.makeText(getApplicationContext(),"Howdie! " + username + " !",Toast.LENGTH_LONG).show();
+
                                     startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                                     finish();
                                 }

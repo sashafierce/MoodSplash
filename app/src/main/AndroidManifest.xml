@@ -23,10 +23,10 @@
         <activity android:name=".Setting" />
         <activity
             android:name=".AddMoodActivity"
-            android:theme="@android:style/android:Theme.Panel"></activity>
+            android:theme="@android:style/android:Theme.Panel" />
         <activity
             android:name=".ModifyMoodActivity"
-            android:theme="@android:style/android:Theme.Panel"></activity>
+            android:theme="@android:style/android:Theme.Panel" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,10 +35,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
-        <activity
-            android:name=".FollowActivity"
-            android:theme="@android:style/android:Theme.Panel"></activity>
-
+        <activity android:name=".FollowActivity" />
+        <activity android:name=".ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

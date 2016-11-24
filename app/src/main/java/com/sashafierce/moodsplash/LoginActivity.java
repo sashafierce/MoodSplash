@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+                startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
             }
         });
 
@@ -102,6 +102,18 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 } else {
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    String username = "";
+                                    String email = inputEmail.getText().toString();
+                                    for (int i=0; i<email.length(); i++) {
+                                        char c = email.charAt(i);
+
+                                        if(c == '@') break;
+                                        if(c == '.' || c == '#' || c == '$' || c == '[' || c == ']' ) ;
+                                        else username += Character.toString(c); ;
+
+                                    }
+                                    Toast.makeText(getApplicationContext(),"Howdie! " + username.toUpperCase() + " ",Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                     startActivity(intent);
                                     finish();
                                 }

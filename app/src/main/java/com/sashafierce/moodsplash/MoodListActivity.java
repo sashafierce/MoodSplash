@@ -12,6 +12,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 public class MoodListActivity extends AppCompatActivity {
 
     final String[] from = new String[] { DatabaseHelper._ID,
@@ -37,8 +47,8 @@ public class MoodListActivity extends AppCompatActivity {
 
         adapter = new SimpleCursorAdapter(this, R.layout.activity_view_mood, cursor, from, to, 0);
         adapter.notifyDataSetChanged();
-
         listView.setAdapter(adapter);
+
 
         // OnCLickListiner For List Items
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -50,12 +60,9 @@ public class MoodListActivity extends AppCompatActivity {
                 String id = idTextView.getText().toString();
                 String title = titleTextView.getText().toString();
 
-
                 Intent modify_intent = new Intent(getApplicationContext(), ModifyMoodActivity.class);
                 modify_intent.putExtra("title", title);
-
                 modify_intent.putExtra("id", id);
-
                 startActivity(modify_intent);
             }
         });

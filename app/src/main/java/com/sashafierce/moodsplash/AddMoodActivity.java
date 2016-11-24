@@ -24,6 +24,10 @@ import android.widget.EditText;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -31,7 +35,9 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class AddMoodActivity extends Activity implements OnClickListener {
 
@@ -48,7 +54,9 @@ public class AddMoodActivity extends Activity implements OnClickListener {
     private Target target;
     private DBManager dbManager;
     private DatabaseHelper databaseHelper;
-
+    private List<String> list ;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference ref;
     private GoogleApiClient client;
 
     @Override
@@ -61,6 +69,9 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
         subjectEditText = (EditText) findViewById(R.id.subject_edittext);
 
+        ref =  FirebaseDatabase.getInstance().getReference();
+        firebaseAuth = FirebaseAuth.getInstance();
+        list = new ArrayList<String>();
         sb = new StringBuilder();
         addTodoBtn = (Button) findViewById(R.id.add_record);
 
@@ -89,15 +100,38 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
                 if (cursor != null) {
                     cursor.moveToFirst();
-                    sb = new StringBuilder();
-                    sb.append("");
+                    sb = new StringBuilder().append("");
                     if (cursor.moveToFirst())
                         sb.append(cursor.getString(cursor.getColumnIndex("subject")));
-
                     appendUrl = sb.toString();
                     url = baseUrl + appendUrl;
                 } else url = "https://source.unsplash.com/random";
+
+                // firebase database
+                FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
+                String email = user.getEmail();
+                cursor = dbManager.fetch();
+
+                if (cursor.moveToFirst()){
+                    do{
+                        String data = cursor.getString(cursor.getColumnIndex("subject"));
+                       list.add(data);
+
+                    }while(cursor.moveToNext());
+                }
+               // User u = new User(username , list);
                 cursor.close();
+                String username = "";
+                 for (int i=0; i<email.length(); i++) {
+                    char c = email.charAt(i);
+
+                    if(c == '@') break;
+                    if(c == '.' || c == '#' || c == '$' || c == '[' || c == ']' ) ;
+                    else username += Character.toString(c);
+
+                }
+                ref.child(username).setValue(list);
+
 
                // Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
 

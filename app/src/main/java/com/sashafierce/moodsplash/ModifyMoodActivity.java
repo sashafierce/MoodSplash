@@ -22,9 +22,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModifyMoodActivity extends Activity implements OnClickListener {
 
@@ -38,6 +44,9 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
     String baseUrl = "https://source.unsplash.com/600x750/?";
     ProgressDialog progressDialog;
     String term;
+    private List<String> list ;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference ref;
     Cursor cursor;
 
     private DatabaseHelper databaseHelper;
@@ -54,7 +63,6 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
         sb = new StringBuilder();
         dbManager = new DBManager(this);
         dbManager.open();
-
         databaseHelper = new DatabaseHelper(this);
 
        // titleText = (EditText) findViewById(R.id.subject_edittext);
@@ -69,6 +77,9 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
         _id = Long.parseLong(id);
 
       //  titleText.setText(name);
+        ref =  FirebaseDatabase.getInstance().getReference();
+        firebaseAuth = FirebaseAuth.getInstance();
+        list = new ArrayList<String>();
 
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
@@ -99,6 +110,31 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
 
             case R.id.btn_delete:
                 dbManager.delete(_id);
+                //Firebase data update
+                FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
+                String email = user.getEmail();
+                cursor = dbManager.fetch();
+
+                if (cursor.moveToFirst()){
+                    do{
+                        String data = cursor.getString(cursor.getColumnIndex("subject"));
+                        list.add(data);
+
+                    }while(cursor.moveToNext());
+                }
+                // User u = new User(username , list);
+                cursor.close();
+                String username = "";
+                for (int i=0; i<email.length(); i++) {
+                    char c = email.charAt(i);
+
+                    if(c == '@') break;
+                    if(c == '.' || c == '#' || c == '$' || c == '[' || c == ']' ) ;
+                    else username += Character.toString(c);
+
+                }
+                ref.child(username).setValue(list);
+
                 this.returnHome();
                 break;
         }

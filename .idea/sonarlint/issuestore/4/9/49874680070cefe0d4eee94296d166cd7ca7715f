@@ -1,11 +1,20 @@
 
-msquid:S1450"XRemove the "dbManager" field and declare it as a local variable in the relevant methods.(Žã€°
-;squid:S1170"!Make this final field static too.(°×´ºþÿÿÿÿ
-Osquid:S1854":Remove this useless assignment to local variable "intent".(å¯Ô«
-hsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(£´Òñýÿÿÿÿ
-6squid:S1170"!Make this final field static too.(óÞÏ³
 psquid:S1450"VRemove the "adapter" field and declare it as a local variable in the relevant methods.(ÃåùÖûÿÿÿÿ
-lsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©®õâ
+6squid:S1170"!Make this final field static too.(óÞÏ³
+psquid:UselessImportCheck"BRemove this unused import 'com.google.firebase.auth.FirebaseAuth'.(ÝÄðöûÿÿÿÿ8ÖÞˆ–‰+
+psquid:UselessImportCheck"BRemove this unused import 'com.google.firebase.auth.FirebaseUser'.(’àíÐùÿÿÿÿ8›Ù†–‰+
+osquid:UselessImportCheck"FRemove this unused import 'com.google.firebase.database.DataSnapshot'.(þÇŒ„8í­ü‘‰+
+;squid:S1170"!Make this final field static too.(°×´ºþÿÿÿÿ
 @squid:S1481"+Remove this unused "intent" local variable.(å¯Ô«
+Osquid:S1854":Remove this useless assignment to local variable "intent".(å¯Ô«
+Lsquid:UselessImportCheck"Remove this duplicated import.(’àíÐùÿÿÿÿ8•Êø•‰+
+msquid:S1450"XRemove the "dbManager" field and declare it as a local variable in the relevant methods.(Žã€°
+tsquid:UselessImportCheck"LRemove this unused import 'com.google.firebase.database.ChildEventListener'.(§ÞÔ.8í­ü‘‰+
+zsquid:UselessImportCheck"LRemove this unused import 'com.google.firebase.database.ValueEventListener'.(‹ÞÜ‹ýÿÿÿÿ8í­ü‘‰+
 qsquid:S1450"WRemove the "listView" field and declare it as a local variable in the relevant methods.(¯¤½ñûÿÿÿÿ
 qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½¿ƒóýÿÿÿÿ
+usquid:UselessImportCheck"GRemove this unused import 'com.google.firebase.database.DatabaseError'.(ˆÔµýÿÿÿÿ8í­ü‘‰+
+ssquid:UselessImportCheck"JRemove this unused import 'com.google.firebase.database.FirebaseDatabase'.(×Ë—8›Ù†–‰+
+lsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©®õâ
+ssquid:UselessImportCheck"KRemove this unused import 'com.google.firebase.database.DatabaseReference'.(ÉÓ¹8ÖÞˆ–‰+
+osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(£´Òñýÿÿÿÿ8®¡¢•‰+

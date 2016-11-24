@@ -1,0 +1,6 @@
+
+Asquid:S1659"%Declare "btnBack" on a separate line.(çú³€8Ø´È³‰+
+rsquid:S1450"VRemove the "btnBack" field and declare it as a local variable in the relevant methods.(çú³€8Ø´È³‰+
+ssquid:S1450"WRemove the "btnReset" field and declare it as a local variable in the relevant methods.(çú³€8Ø´È³‰+
+jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(È¤ûæ8Ø´È³‰+
+}squid:S1188"\Reduce this anonymous class number of lines from 27 to at most 20, or make it a named class.(ˆ×Üíûÿÿÿÿ8Ø´È³‰+

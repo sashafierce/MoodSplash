@@ -27,7 +27,7 @@
         android:padding="12dp"
         style="?android:textAppearanceSmall"
         android:textSize="20sp"
-        android:background="@color/btn_logut_bg"
+        android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:text="add mood"

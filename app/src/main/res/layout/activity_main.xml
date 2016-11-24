@@ -14,18 +14,14 @@
     android:weightSum="1">
 
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
+        <ImageView
+            android:layout_width="@dimen/logo_w_h"
+            android:layout_height="@dimen/logo_w_h"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:text="MoodSplash"
-            android:textAlignment="center"
-            android:textSize="36sp"
-            android:textColor="@color/btn_logut_bg"
-            android:textStyle="bold"
-            style="?android:textAppearanceSmall" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/ic_launcher" />
 
         <Button
             android:id="@+id/edit_mood_button"
@@ -40,9 +36,6 @@
             android:text="mood list"
             android:textAlignment="center"
             android:textColor="@color/input_register_bg"
-
-            android:textSize="25sp"
-            android:textStyle="bold"
 
             />
 
@@ -59,8 +52,6 @@
             android:text="random"
             android:textAlignment="center"
             android:textColor="@color/input_register_bg"
-            android:textSize="25sp"
-            android:textStyle="bold"
 
             />
 
@@ -76,8 +67,6 @@
             android:text="Settings"
             android:textAlignment="center"
             android:textColor="@color/input_register_bg"
-            android:textSize="25sp"
-            android:textStyle="bold"
 
             />
 
