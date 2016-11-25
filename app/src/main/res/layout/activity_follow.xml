@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="40dp" >
+    android:padding="40dp"
+    android:background="@mipmap/bg">
 
     <ImageView
         android:layout_width="@dimen/logo_w_h"
         android:layout_height="@dimen/logo_w_h"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="15dp"
         android:src="@mipmap/ic_launcher" />
 
     <TextView
@@ -20,9 +21,14 @@
         android:layout_marginTop="5dp"
         android:text="Sync your mood with a member!"
         android:textAlignment="center"
-        android:textSize="20dp"
-        android:layout_marginBottom="30dp"
         android:textStyle="bold"
+        android:padding="10dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+
+        android:shadowColor="@color/colorAccent"
+        android:layout_marginBottom="20dp"
+
         style="?android:textAppearanceSmall" />
 
     <android.support.design.widget.TextInputLayout
@@ -32,14 +38,15 @@
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:ems="10"
+        android:textColor="@android:color/black"
         android:hint="enter member's email"
         android:inputType="textEmailAddress"
         android:layout_marginTop="40dp"
-       >
+        android:background="@color/white">
 
-        <requestFocus />
+
     </EditText>
     </android.support.design.widget.TextInputLayout>
 
@@ -52,7 +59,7 @@
         android:layout_gravity="center"
         android:padding="12dp"
         style="?android:textAppearanceSmall"
-        android:background="@color/btn_logut_bg"
+        android:background="@color/btn_login"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:text="Sync"

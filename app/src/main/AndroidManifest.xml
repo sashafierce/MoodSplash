@@ -36,7 +36,8 @@
         </activity>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".FollowActivity" />
-        <activity android:name=".ForgotPasswordActivity"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".SpeechToText"></activity>
     </application>
 
 </manifest>

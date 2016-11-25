@@ -1,7 +1,7 @@
 
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(—Ý””ýÿÿÿÿ
 esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Èœ§–úÿÿÿÿ
-lsquid:UselessImportCheck"ERemove this unused import 'android.database.sqlite.SQLiteOpenHelper'.(©ÑÏ™üÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(—Ý””ýÿÿÿÿ
 lsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¼Íž
-nsquid:S1488"YImmediately return this expression instead of assigning it to the temporary variable "i".(®”«
 lsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÞüŽ•
+nsquid:S1488"YImmediately return this expression instead of assigning it to the temporary variable "i".(®”«
+lsquid:UselessImportCheck"ERemove this unused import 'android.database.sqlite.SQLiteOpenHelper'.(©ÑÏ™üÿÿÿÿ

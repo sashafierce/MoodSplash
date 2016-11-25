@@ -1,32 +1,32 @@
 
-Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ8îåàŠ‰+
-qsquid:UselessImportCheck"CRemove this unused import 'android.database.sqlite.SQLiteDatabase'.(ãµèÈùÿÿÿÿ8í¶îŠ‰+
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ôÃãıÿÿÿÿ8óÁ¡™‰+
-Vsquid:S2209"5Change this instance-reference to a static reference.(úÑÙ×úÿÿÿÿ8…Õ£™‰+
 Wsquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
-Zsquid:UselessImportCheck"9Remove this unused import 'android.app.WallpaperManager'.(÷¡ï
-msquid:S1450"XRemove the "updateBtn" field and declare it as a local variable in the relevant methods.(œû˜–
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¢†ºıÿÿÿÿÿ8ÿ¥íŠ‰+
-lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ8îåàŠ‰+
-Ksquid:EmptyStatementUsageCheck"Remove this empty statement.(óÜ¾’8óÁ¡™‰+
-ysquid:S1450"]Remove the "databaseHelper" field and declare it as a local variable in the relevant methods.(–Ø¯8í¶îŠ‰+
- squid:MethodCyclomaticComplexity"]The Cyclomatic Complexity of this method "onClick" is 13 which is greater than 10 authorized.(¡é††8óÁ¡™‰+
-‹squid:S1151"jReduce this switch case number of lines from 18 to at most 5, for example by extracting code into methods.(ó×±æşÿÿÿÿ8îåàŠ‰+
-ksquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿±Š
-Nsquid:S1068"2Remove this unused "databaseHelper" private field.(–Ø¯8í¶îŠ‰+
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(óæøÄüÿÿÿÿ8 ®¥™‰+
-ksquid:S00116"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬«îõ8îåàŠ‰+
-<squid:S1659"'Declare "deleteBtn" on a separate line.(œû˜–
-vsquid:S1067"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8óÁ¡™‰+
-msquid:S1450"XRemove the "deleteBtn" field and declare it as a local variable in the relevant methods.(œû˜–
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–ÍûÊ8¹´ìŠ‰+
-qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Æ¨ 8óÁ¡™‰+
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ò¼öÉ8¡ÍîŠ‰+
-Ssquid:UselessImportCheck"1Remove this unused import 'android.os.AsyncTask'.(À»¥—
-†squid:S1151"jReduce this switch case number of lines from 28 to at most 5, for example by extracting code into methods.(ÙõÉ×8óÁ¡™‰+
-Esquid:S1659"$Declare "height" on a separate line.(ŠÿŞêüÿÿÿÿ8îåàŠ‰+
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÚÊ¨ıÿÿÿÿ8Ğ¼óŠ‰+
-[squid:UselessImportCheck"9Remove this unused import 'com.squareup.picasso.Picasso'.(£œ¿×
-[squid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8í¶îŠ‰+
-=squid:S1643"Use a StringBuilder instead.(Õ‘æÀúÿÿÿÿ8óÁ¡™‰+
 Isquid:S1068"-Remove this unused "titleText" private field.(Ñçåÿ8Ğ¼óŠ‰+
+<squid:S1659"'Declare "deleteBtn" on a separate line.(œû˜–
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ôÃãıÿÿÿÿ8óÁ¡™‰+
+Esquid:S1659"$Declare "height" on a separate line.(ŠÿŞêüÿÿÿÿ8îåàŠ‰+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¢†ºıÿÿÿÿÿ8ÿ¥íŠ‰+
+qsquid:UselessImportCheck"CRemove this unused import 'android.database.sqlite.SQLiteDatabase'.(ãµèÈùÿÿÿÿ8í¶îŠ‰+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(óæøÄüÿÿÿÿ8 ®¥™‰+
+msquid:S1450"XRemove the "deleteBtn" field and declare it as a local variable in the relevant methods.(œû˜–
+‹squid:S1151"jReduce this switch case number of lines from 18 to at most 5, for example by extracting code into methods.(ó×±æşÿÿÿÿ8îåàŠ‰+
+ksquid:S00116"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬«îõ8îåàŠ‰+
+ksquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿±Š
+Ssquid:UselessImportCheck"1Remove this unused import 'android.os.AsyncTask'.(À»¥—
+Vsquid:S2209"5Change this instance-reference to a static reference.(úÑÙ×úÿÿÿÿ8…Õ£™‰+
+Ksquid:EmptyStatementUsageCheck"Remove this empty statement.(óÜ¾’8óÁ¡™‰+
+[squid:UselessImportCheck"9Remove this unused import 'com.squareup.picasso.Picasso'.(£œ¿×
+=squid:S1643"Use a StringBuilder instead.(Õ‘æÀúÿÿÿÿ8óÁ¡™‰+
+†squid:S1151"jReduce this switch case number of lines from 28 to at most 5, for example by extracting code into methods.(ÙõÉ×8óÁ¡™‰+
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ8îåàŠ‰+
+[squid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8í¶îŠ‰+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–ÍûÊ8¹´ìŠ‰+
+Zsquid:UselessImportCheck"9Remove this unused import 'android.app.WallpaperManager'.(÷¡ï
+ysquid:S1450"]Remove the "databaseHelper" field and declare it as a local variable in the relevant methods.(–Ø¯8í¶îŠ‰+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÚÊ¨ıÿÿÿÿ8Ğ¼óŠ‰+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ò¼öÉ8¡ÍîŠ‰+
+ squid:MethodCyclomaticComplexity"]The Cyclomatic Complexity of this method "onClick" is 13 which is greater than 10 authorized.(¡é††8óÁ¡™‰+
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ8îåàŠ‰+
+Nsquid:S1068"2Remove this unused "databaseHelper" private field.(–Ø¯8í¶îŠ‰+
+msquid:S1450"XRemove the "updateBtn" field and declare it as a local variable in the relevant methods.(œû˜–
+vsquid:S1067"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8óÁ¡™‰+
+qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Æ¨ 8óÁ¡™‰+

@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,6 +16,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,6 +52,7 @@ public class AddMoodActivity extends Activity implements OnClickListener {
     Cursor cursor;
     SetWallpaper setWallpaperTask;
     private Button addTodoBtn;
+    private Button speechBtn;
     private EditText subjectEditText;
     private Target target;
     private DBManager dbManager;
@@ -58,6 +61,9 @@ public class AddMoodActivity extends Activity implements OnClickListener {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference ref;
     private GoogleApiClient client;
+    final static int REQ_CODE = 1;
+
+    private final int RESULT_OK = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,12 +80,13 @@ public class AddMoodActivity extends Activity implements OnClickListener {
         list = new ArrayList<String>();
         sb = new StringBuilder();
         addTodoBtn = (Button) findViewById(R.id.add_record);
+        speechBtn = (Button) findViewById(R.id.btn_speak);
 
         dbManager = new DBManager(this);
         databaseHelper = new DatabaseHelper(this);
         dbManager.open();
         addTodoBtn.setOnClickListener(this);
-
+        speechBtn.setOnClickListener(this);
         setWallpaperTask = new SetWallpaper(getApplicationContext(), getBaseContext(), this);
 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -93,19 +100,7 @@ public class AddMoodActivity extends Activity implements OnClickListener {
                 final String name = subjectEditText.getText().toString();
 
                 dbManager.insert(name);
-                SQLiteDatabase db = databaseHelper.getReadableDatabase();
-                String query = "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
-                Log.d("Query ", query);
-                cursor = db.rawQuery(query, null);
-
-                if (cursor != null) {
-                    cursor.moveToFirst();
-                    sb = new StringBuilder().append("");
-                    if (cursor.moveToFirst())
-                        sb.append(cursor.getString(cursor.getColumnIndex("subject")));
-                    appendUrl = sb.toString();
-                    url = baseUrl + appendUrl;
-                } else url = "https://source.unsplash.com/random";
+                url = baseUrl + name;
 
                 // firebase database
                 FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
@@ -148,6 +143,28 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
                 startActivity(main);
                 break;
+            case R.id.btn_speak:
+                Intent intent = new Intent(this, SpeechToText.class);
+
+                startActivityForResult(intent, REQ_CODE);
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REQ_CODE: {
+                if (resultCode == RESULT_OK && null != data) {
+
+                    String string = data.getStringExtra("term");
+                    subjectEditText.setText(string);
+                }
+                break;
+            }
+
         }
     }
 

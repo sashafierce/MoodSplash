@@ -33,8 +33,6 @@ p
 @app/src/main/java/com/sashafierce/moodsplash/FollowActivity.java,c/4/c4837bb0947c94bafb8641bed5a0033eefa10fe0
 t
 Dapp/src/main/java/com/sashafierce/moodsplash/ModifyMoodActivity.java,2/1/210a4d837fa9c600f33ee028e5dcd3484ce83879
-f
-6app/src/main/java/com/sashafierce/moodsplash/User.java,3/b/3b5860c84580a90fcff2862a53e46decf622bec8
 p
 @app/src/main/java/com/sashafierce/moodsplash/SignUpActivity.java,9/9/99ca9760b92d4833bf1e286276861654c4cab33f
 š
@@ -607,3 +605,9 @@ japp/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-imp
 happ/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.1/AndroidManifest.xml,4/0/40fd3ecf836479f43409250a72a179b62147a7a1
 x
 Happ/src/main/java/com/sashafierce/moodsplash/ForgotPasswordActivity.java,7/7/77bac96a3dba4bdae39a67f9e0aa7117ef48e989
+n
+>app/src/main/java/com/sashafierce/moodsplash/SpeechToText.java,5/e/5ee484cee92a350ecabbe8ea670219829be08484
+q
+Aapp/src/main/java/com/sashafierce/moodsplash/DBHelperSetting.java,a/7/a7730782631ac086b1faa9d9e8cc8c8959519841
+j
+:app/src/main/java/com/sashafierce/moodsplash/SetTimer.java,d/d/dd7c903dae68bc7adf91342c6384f750b7980523

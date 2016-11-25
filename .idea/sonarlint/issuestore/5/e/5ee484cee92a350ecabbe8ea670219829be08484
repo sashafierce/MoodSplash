@@ -1,0 +1,13 @@
+
+Hsquid:S1166A"%Either log or rethrow this exception.(€øæÙýÿÿÿÿ8·¸Ñ·‰+
+ˆsquid:S1151R"jReduce this switch case number of lines from 18 to at most 5, for example by extracting code into methods.(Û»½É8·¸Ñ·‰+
+Ksquid:S1199R"-Extract this nested code block into a method.(Û»½É8·¸Ñ·‰+
+\"squid:SwitchLastCaseIsDefaultCheckQ""Add a default case to this switch.(×ö³–úÿÿÿÿ8·¸Ñ·‰+
+nsquid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(ü¯ùþùÿÿÿÿ8Ëøˆ¼‰+
+dsquid:S1226Y"AIntroduce a new variable instead of reusing the parameter "data".(ò„Ÿûÿÿÿÿ8¸Ù–¼‰+
+isquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(üÏæÎ8ÒÄ´¸‰+
+usquid:S1450"WRemove the "btnSpeak" field and declare it as a local variable in the relevant methods.(­â€Š8·¸Ñ·‰+
+nsquid:CommentedOutCodeLine."<This block of commented-out lines of code should be removed.(Æ¶›Ðþÿÿÿÿ8þ®‰¼‰+
+nsquid:S1301Q"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8·¸Ñ·‰+
+„squid:S00116"`Rename this field "REQ_CODE_SPEECH_INPUT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Þ„™´ýÿÿÿÿ8ÚÂÐ»‰+
+Dsquid:S1170"!Make this final field static too.(Þ„™´ýÿÿÿÿ8·¸Ñ·‰+

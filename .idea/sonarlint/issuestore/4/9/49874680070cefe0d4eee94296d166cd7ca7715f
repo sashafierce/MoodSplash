@@ -1,20 +1,22 @@
 
-psquid:S1450"VRemove the "adapter" field and declare it as a local variable in the relevant methods.(ÃåùÖûÿÿÿÿ
-6squid:S1170"!Make this final field static too.(óŞÏ³
-psquid:UselessImportCheck"BRemove this unused import 'com.google.firebase.auth.FirebaseAuth'.(İÄğöûÿÿÿÿ8ÖŞˆ–‰+
-psquid:UselessImportCheck"BRemove this unused import 'com.google.firebase.auth.FirebaseUser'.(’àíĞùÿÿÿÿ8›Ù†–‰+
-osquid:UselessImportCheck"FRemove this unused import 'com.google.firebase.database.DataSnapshot'.(şÇŒ„8í­ü‘‰+
-;squid:S1170"!Make this final field static too.(°×´ºşÿÿÿÿ
-@squid:S1481"+Remove this unused "intent" local variable.(å¯Ô«
-Osquid:S1854":Remove this useless assignment to local variable "intent".(å¯Ô«
-Lsquid:UselessImportCheck"Remove this duplicated import.(’àíĞùÿÿÿÿ8•Êø•‰+
-msquid:S1450"XRemove the "dbManager" field and declare it as a local variable in the relevant methods.(ã€°
-tsquid:UselessImportCheck"LRemove this unused import 'com.google.firebase.database.ChildEventListener'.(§ŞÔ.8í­ü‘‰+
-zsquid:UselessImportCheck"LRemove this unused import 'com.google.firebase.database.ValueEventListener'.(‹ŞÜ‹ıÿÿÿÿ8í­ü‘‰+
-qsquid:S1450"WRemove the "listView" field and declare it as a local variable in the relevant methods.(¯¤½ñûÿÿÿÿ
-qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½¿ƒóıÿÿÿÿ
-usquid:UselessImportCheck"GRemove this unused import 'com.google.firebase.database.DatabaseError'.(ˆÔµıÿÿÿÿ8í­ü‘‰+
-ssquid:UselessImportCheck"JRemove this unused import 'com.google.firebase.database.FirebaseDatabase'.(×Ë—8›Ù†–‰+
-lsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©®õâ
-ssquid:UselessImportCheck"KRemove this unused import 'com.google.firebase.database.DatabaseReference'.(ÉÓ¹8ÖŞˆ–‰+
-osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(£´Òñıÿÿÿÿ8®¡¢•‰+
+=squid:S1170"!Make this final field static too.(óŞÏ³8ÆÌÍÒ‰+
+Dsquid:S1659"#Declare "email" on a separate line.(şã‘úÿÿÿÿ8ÆÌÍÒ‰+
+qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Æ¨ 8ÆÌÍÒ‰+
+Ksquid:EmptyStatementUsageCheck"Remove this empty statement.(óÜ¾’8ÆÌÍÒ‰+
+vsquid:S1067"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8ÆÌÍÒ‰+
+Hsquid:S1068",Remove this unused "childref" private field.( ·×8ÆÌÍÒ‰+
+=squid:S1643"Use a StringBuilder instead.(Õ‘æÀúÿÿÿÿ8ÆÌÍÒ‰+
+esquid:HiddenFieldCheck"9Rename "email" which hides the field declared at line 47.(ò¢ô¥şÿÿÿÿ8ÆÌÍÒ‰+
+Vsquid:S1854":Remove this useless assignment to local variable "intent".(å¯Ô«8ÆÌÍÒ‰+
+xsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½¿ƒóıÿÿÿÿ8ÆÌÍÒ‰+
+osquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(£´Òñıÿÿÿÿ8ÆÌÍÒ‰+
+Vsquid:S2209"5Change this instance-reference to a static reference.(úÑÙ×úÿÿÿÿ8ÆÌÍÒ‰+
+Bsquid:S1170"!Make this final field static too.(°×´ºşÿÿÿÿ8ÆÌÍÒ‰+
+Gsquid:S1481"+Remove this unused "intent" local variable.(å¯Ô«8ÆÌÍÒ‰+
+ssquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©®õâ8ÆÌÍÒ‰+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ÿ¼Â‡8…ÏÒ‰+
+Lsquid:UselessImportCheck"Remove this duplicated import.(’àíĞùÿÿÿÿ8ÆÌÍÒ‰+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(óæøÄüÿÿÿÿ8ÆÌÍÒ‰+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ºö·ï8ÆÌÍÒ‰+
+csquid:HiddenFieldCheck"<Rename "username" which hides the field declared at line 47.(ÆºŒÍ8ÆÌÍÒ‰+
+tsquid:UselessImportCheck"LRemove this unused import 'com.google.firebase.database.ChildEventListener'.(§ŞÔ.8ÆÌÍÒ‰+

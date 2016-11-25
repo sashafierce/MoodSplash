@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MoodSplash</string>
     <string-array name="frequency_type">
+        <item>None</item>
         <item>Hour(s)</item>
         <item>Day(s)</item>
         <item>Week(s)</item>
@@ -22,6 +23,11 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="speech_prompt">Say something&#8230;</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="tap_on_mic">Tap on mic to speak</string>
     <string name="action_sign_up_short">SignUp</string>
     <string name="email">Email</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>

@@ -107,7 +107,7 @@ public class FollowActivity extends Activity implements View.OnClickListener {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 if (!dataSnapshot.hasChild(username)) {
-                    Toast.makeText(getApplicationContext(), "Sorry ,member doesnot exists.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "member doesnot exists or list is empty", Toast.LENGTH_LONG).show();
                     flag = false;
                 }
                 else {
@@ -116,7 +116,7 @@ public class FollowActivity extends Activity implements View.OnClickListener {
 
                     final GenericTypeIndicator<List<String>> t = new GenericTypeIndicator<List<String>>() {
                     };
-                    ref.addValueEventListener(new ValueEventListener() {
+                    ref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
 

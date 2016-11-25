@@ -16,21 +16,39 @@
 
         <requestFocus />
     </EditText>
-
-
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:layout_height="match_parent">
     <Button
         android:id="@+id/add_record"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
-        android:layout_gravity="center"
         android:padding="12dp"
+        android:layout_weight=".5"
         style="?android:textAppearanceSmall"
-        android:textSize="20sp"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:text="add mood"
         android:textAllCaps="true"/>
 
+    <Button
+        android:id="@+id/btn_speak"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:padding="12dp"
+        android:layout_weight=".5"
+        style="?android:textAppearanceSmall"
+
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:text="Speak"
+        android:textAllCaps="true"/>
+
+    </LinearLayout>
 </LinearLayout>

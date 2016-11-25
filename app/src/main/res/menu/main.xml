@@ -9,5 +9,10 @@
         android:orderInCategory="100"
         android:title="add record"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/clear_list"
+        android:orderInCategory="100"
+        android:title="CLEAR ALL"
+        app:showAsAction="always"/>
 
 </menu>

@@ -104,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.sign_out) {
 
             auth.signOut();
+            SQLiteDatabase db = databaseHelper.getReadableDatabase();
+            db.execSQL("delete from MOODS");
 
             //Toast.makeText(getApplicationContext(),"Signout method",Toast.LENGTH_LONG).show();
             FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {

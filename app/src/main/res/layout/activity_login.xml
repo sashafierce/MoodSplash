@@ -10,30 +10,34 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/pink"
+        android:background="@mipmap/bg5"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="@dimen/activity_horizontal_margin">
+        android:padding="@dimen/activity_horizontal_margin"
+        android:weightSum="1">
 
 
         <ImageView
             android:layout_width="@dimen/logo_w_h"
             android:layout_height="@dimen/logo_w_h"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:src="@mipmap/ic_launcher" />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="15dp"
                 android:hint="@string/hint_email"
+                android:background="@color/white"
+                android:layout_marginBottom="20dp"
                 android:inputType="textEmailAddress"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/background_dark"
                 android:textColorHint="@android:color/white" />
         </android.support.design.widget.TextInputLayout>
 
@@ -41,15 +45,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
+
             <EditText
                 android:id="@+id/password"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginBottom="10dp"
                 android:hint="@string/hint_password"
+                android:background="@color/white"
                 android:inputType="textPassword"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/black"
+                />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Login Button -->
@@ -59,7 +66,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/pink"
             android:text="@string/btn_login"
             android:textColor="@android:color/white" />
 
@@ -84,7 +91,7 @@
             android:background="@null"
             android:text="No account yet? Create one"
             android:textAllCaps="false"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorAccent"
             android:textSize="15dp" />
     </LinearLayout>
 

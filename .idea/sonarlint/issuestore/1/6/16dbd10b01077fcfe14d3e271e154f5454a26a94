@@ -1,18 +1,18 @@
 
-hsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(·¡ïõøÿÿÿÿ
-Ž squid:MethodCyclomaticComplexity"]The Cyclomatic Complexity of this method "onClick" is 15 which is greater than 10 authorized.(¡é††8â…þ˜‰+
- squid:MethodCyclomaticComplexity"^The Cyclomatic Complexity of this method "onCreate" is 19 which is greater than 10 authorized.(ž¨Œþÿÿÿÿ
-@squid:S1659"&Declare "btnReset" on a separate line.(›öÕæúÿÿÿÿ
-vsquid:S1188"\Reduce this anonymous class number of lines from 33 to at most 20, or make it a named class.(„–Ÿ–ùÿÿÿÿ
-@squid:S1659"&Declare "btnLogin" on a separate line.(›öÕæúÿÿÿÿ
-vsquid:S1067"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8â…þ˜‰+
-Psquid:EmptyStatementUsageCheck"Remove this empty statement.(ÙÿÑüÿÿÿÿ8â…þ˜‰+
-qsquid:S1188"\Reduce this anonymous class number of lines from 55 to at most 20, or make it a named class.(Î§£¿
-qsquid:S1450"WRemove the "btnReset" field and declare it as a local variable in the relevant methods.(›öÕæúÿÿÿÿ
-Esquid:S1659"+Declare "inputPassword" on a separate line.(‚ö°ãûÿÿÿÿ
 =squid:S1643"Use a StringBuilder instead.(ÙÿÑüÿÿÿÿ8â…þ˜‰+
-Ksquid:EmptyStatementUsageCheck"Remove this empty statement.(óÜ¾’8â…þ˜‰+
-qsquid:S1450"WRemove the "btnLogin" field and declare it as a local variable in the relevant methods.(›öÕæúÿÿÿÿ
+Psquid:EmptyStatementUsageCheck"Remove this empty statement.(ÙÿÑüÿÿÿÿ8â…þ˜‰+
 _squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÖöÈJ
+Esquid:S1659"+Declare "inputPassword" on a separate line.(‚ö°ãûÿÿÿÿ
+qsquid:S1450"WRemove the "btnReset" field and declare it as a local variable in the relevant methods.(›öÕæúÿÿÿÿ
 qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Æ¨ 8â…þ˜‰+
+@squid:S1659"&Declare "btnLogin" on a separate line.(›öÕæúÿÿÿÿ
+hsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(·¡ïõøÿÿÿÿ
+@squid:S1659"&Declare "btnReset" on a separate line.(›öÕæúÿÿÿÿ
+vsquid:S1067"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8â…þ˜‰+
+vsquid:S1188"\Reduce this anonymous class number of lines from 33 to at most 20, or make it a named class.(„–Ÿ–ùÿÿÿÿ
+ squid:MethodCyclomaticComplexity"^The Cyclomatic Complexity of this method "onCreate" is 19 which is greater than 10 authorized.(ž¨Œþÿÿÿÿ
+qsquid:S1450"WRemove the "btnLogin" field and declare it as a local variable in the relevant methods.(›öÕæúÿÿÿÿ
+qsquid:S1188"\Reduce this anonymous class number of lines from 55 to at most 20, or make it a named class.(Î§£¿
+Ksquid:EmptyStatementUsageCheck"Remove this empty statement.(óÜ¾’8â…þ˜‰+
 rsquid:S1450"XRemove the "btnSignup" field and declare it as a local variable in the relevant methods.(›öÕæúÿÿÿÿ
+Ž squid:MethodCyclomaticComplexity"]The Cyclomatic Complexity of this method "onClick" is 15 which is greater than 10 authorized.(¡é††8â…þ˜‰+

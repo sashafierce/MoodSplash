@@ -9,79 +9,74 @@
     tools:context="com.sashafierce.moodsplash.MainActivity"
     android:layout_alignParentLeft="true"
     android:layout_alignParentTop="true"
-    android:background="@color/bg_main"
+    android:background="@mipmap/bg1"
     android:orientation="vertical"
     android:weightSum="1">
 
-
-
-        <ImageView
-            android:layout_width="@dimen/logo_w_h"
-            android:layout_height="@dimen/logo_w_h"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@mipmap/ic_launcher" />
 
         <Button
             android:id="@+id/edit_mood_button"
             style="?android:textAppearanceSmall"
 
-            android:layout_width="270dp"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="35dp"
-            android:background="@color/white"
+            android:layout_marginTop="100dp"
+            android:background="@color/input_register_bg"
             android:onClick="editMood"
             android:text="mood list"
             android:textAlignment="center"
-            android:textColor="@color/input_register_bg"
+            android:textColor="@color/white"
 
             />
 
         <Button
             android:id="@+id/random_button"
             style="?android:textAppearanceSmall"
-            android:layout_width="270dp"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="25dp"
 
             android:background="@color/white"
             android:onClick="random"
             android:text="random"
             android:textAlignment="center"
-            android:textColor="@color/input_register_bg"
+            android:textColor="@android:color/black"
 
             />
 
         <Button
             android:id="@+id/settings_button"
             style="?android:textAppearanceSmall"
-            android:layout_width="270dp"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:background="@color/white"
+            android:layout_marginTop="25dp"
+            android:background="@color/input_register_bg"
             android:onClick="setting"
             android:text="Settings"
             android:textAlignment="center"
-            android:textColor="@color/input_register_bg"
+            android:textColor="@android:color/white"
 
             />
 
         <Button
             android:id="@+id/follow_button"
-            android:layout_width="fill_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:background="@null"
+            android:layout_marginTop="25dip"
+            android:background="@color/colorAccent"
             android:onClick="follow"
+            android:layout_gravity="center_horizontal"
+
             android:textStyle="bold"
             android:text="Follow a member!"
+            style="?android:textAppearanceSmall"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="20dp" />
+                android:outlineProvider="bounds"
+            android:textColor="@android:color/black"
+             />
 
 
 </LinearLayout>
