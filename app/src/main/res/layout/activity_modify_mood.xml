@@ -5,14 +5,6 @@
     android:orientation="vertical"
     android:padding="10dp" >
 
-    <EditText
-        android:id="@+id/subject_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textCapSentences"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="title" />
 
 
 
@@ -29,14 +21,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="update" />
+            android:padding="12dp"
+            style="?android:textAppearanceSmall"
+
+            android:layout_marginRight="2dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="SET NOW" />
 
         <Button
             android:id="@+id/btn_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="delete" />
+            android:padding="12dp"
+            style="?android:textAppearanceSmall"
+
+            android:layout_marginLeft="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="delete"
+            android:textAllCaps="true"/>
     </LinearLayout>
 
 </LinearLayout>

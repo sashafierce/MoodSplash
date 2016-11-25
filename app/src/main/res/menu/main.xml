@@ -1,13 +1,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.sqlitesample.MainActivity" >
+    tools:context="com.sashafierce.moodsplash.AddMoodActivity" >
 
     <item
         android:id="@+id/add_record"
         android:icon="@android:drawable/ic_menu_add"
         android:orderInCategory="100"
         android:title="add record"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/clear_list"
+        android:orderInCategory="100"
+        android:title="CLEAR ALL"
         app:showAsAction="always"/>
 
 </menu>

@@ -1,0 +1,18 @@
+
+?squid:S1643Z"Use a StringBuilder instead.(ÙÿÑüÿÿÿÿ8½ï˜‰+
+squid:S1188H"\Reduce this anonymous class number of lines from 28 to at most 20, or make it a named class.(½òÎ–úÿÿÿÿ8½ï˜‰+
+{squid:S1450"XRemove the "btnSignUp" field and declare it as a local variable in the relevant methods.(÷ğÇ¨ùÿÿÿÿ8ú¾ ˜‰+
+zsquid:S1188/"\Reduce this anonymous class number of lines from 56 to at most 20, or make it a named class.(±×„®8ú¾ ˜‰+
+ssquid:S00122X"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Æ¨ 8½ï˜‰+
+esquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(˜£‡
+{squid:S1450"XRemove the "btnSignIn" field and declare it as a local variable in the relevant methods.(÷ğÇ¨ùÿÿÿÿ8ú¾ ˜‰+
+– squid:MethodCyclomaticComplexity"^The Cyclomatic Complexity of this method "onCreate" is 18 which is greater than 10 authorized.(¨Œşÿÿÿÿ8ú¾ ˜‰+
+ squid:MethodCyclomaticComplexity1"]The Cyclomatic Complexity of this method "onClick" is 16 which is greater than 10 authorized.(¡é††8½ï˜‰+
+Gsquid:S1659"+Declare "inputPassword" on a separate line.(‚ö°ãûÿÿÿÿ
+Rsquid:EmptyStatementUsageCheckZ"Remove this empty statement.(ÙÿÑüÿÿÿÿ8˜õù˜‰+
+Msquid:EmptyStatementUsageCheckY"Remove this empty statement.(óÜ¾’8½ï˜‰+
+Qsquid:S1659".Declare "btnResetPassword" on a separate line.(÷ğÇ¨ùÿÿÿÿ8ú¾ ˜‰+
+xsquid:S1067Y"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8½ï˜‰+
+nsquid:CommentedOutCodeLineK"<This block of commented-out lines of code should be removed.(³÷÷¡şÿÿÿÿ8ÑÉ˜µ‰+
+Jsquid:S1659"'Declare "btnSignUp" on a separate line.(÷ğÇ¨ùÿÿÿÿ8ú¾ ˜‰+
+Wsquid:S1068"4Remove this unused "btnResetPassword" private field.(÷ğÇ¨ùÿÿÿÿ8ú¾ ˜‰+

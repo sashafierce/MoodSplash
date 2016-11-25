@@ -7,13 +7,17 @@ android:orientation="vertical"
 android:paddingBottom="@dimen/activity_vertical_margin"
 android:paddingLeft="@dimen/activity_horizontal_margin"
 android:paddingRight="@dimen/activity_horizontal_margin"
-android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/bg_main"
+
+    android:paddingTop="@dimen/activity_vertical_margin"
 tools:context="com.sashafierce.moodsplash.Setting">
 
 <TextView
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:text="Wallpaper change frequency"
+    android:text="Wallpaper Timer"
+    android:textColor="@color/input_register_bg"
+    style="?android:textAppearanceSmall"
     android:layout_marginTop="60dp"
     android:textAlignment="center"
 
@@ -24,6 +28,7 @@ tools:context="com.sashafierce.moodsplash.Setting">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+
     android:layout_marginTop="30dp"
     android:orientation="horizontal"
     android:weightSum="1">
@@ -52,8 +57,10 @@ tools:context="com.sashafierce.moodsplash.Setting">
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:text="Image Resolution"
+    android:textColor="@color/btn_login_bg"
+    style="?android:textAppearanceSmall"
     android:textAlignment="center"
-    android:layout_marginTop="30dp"
+    android:layout_marginTop="40dp"
     android:textSize="25sp" />
 
 <Spinner
@@ -62,7 +69,7 @@ tools:context="com.sashafierce.moodsplash.Setting">
     android:layout_height="wrap_content"
     android:layout_marginTop="30dp"
     android:layout_gravity="center"
-    android:entries="@array/quality" />
+       android:entries="@array/quality" />
 
 
 

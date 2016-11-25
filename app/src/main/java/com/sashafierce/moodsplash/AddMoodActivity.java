@@ -1,7 +1,10 @@
 package com.sashafierce.moodsplash;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,6 +16,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,34 +26,44 @@ import android.widget.EditText;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 public class AddMoodActivity extends Activity implements OnClickListener {
 
-    private Button addTodoBtn;
-    private EditText subjectEditText;
-
-    private Target target;
     Bitmap result;
     String appendUrl;
     String url;
     StringBuilder sb;
     String baseUrl = "https://source.unsplash.com/600x750/?";
     ProgressDialog progressDialog;
-    private DBManager dbManager;
     Cursor cursor;
-
+    SetWallpaper setWallpaperTask;
+    private Button addTodoBtn;
+    private Button speechBtn;
+    private EditText subjectEditText;
+    private Target target;
+    private DBManager dbManager;
     private DatabaseHelper databaseHelper;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+    private List<String> list ;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference ref;
     private GoogleApiClient client;
+    final static int REQ_CODE = 1;
+
+    private final int RESULT_OK = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,15 +75,20 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
         subjectEditText = (EditText) findViewById(R.id.subject_edittext);
 
+        ref =  FirebaseDatabase.getInstance().getReference();
+        firebaseAuth = FirebaseAuth.getInstance();
+        list = new ArrayList<String>();
         sb = new StringBuilder();
         addTodoBtn = (Button) findViewById(R.id.add_record);
+        speechBtn = (Button) findViewById(R.id.btn_speak);
 
         dbManager = new DBManager(this);
         databaseHelper = new DatabaseHelper(this);
         dbManager.open();
         addTodoBtn.setOnClickListener(this);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        speechBtn.setOnClickListener(this);
+        setWallpaperTask = new SetWallpaper(getApplicationContext(), getBaseContext(), this);
+
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -80,33 +99,43 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
                 final String name = subjectEditText.getText().toString();
 
-
                 dbManager.insert(name);
-                SQLiteDatabase db = databaseHelper.getReadableDatabase();
-                String query =  "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
-                Log.d("Query " ,query);
-                // Toast.makeText(getApplicationContext(), query , Toast.LENGTH_LONG).show();
-                cursor = db.rawQuery(query,null);
+                url = baseUrl + name;
 
-                if (cursor != null) {
-                    cursor.moveToFirst();
-                    sb = new StringBuilder();
-                    sb.append("");
-                    if(cursor.moveToFirst())
-                        sb.append(cursor.getString(cursor.getColumnIndex("subject")) );
+                // firebase database
+                FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
+                String email = user.getEmail();
+                cursor = dbManager.fetch();
 
-                    appendUrl = sb.toString();
-                    url = baseUrl + appendUrl;
+                if (cursor.moveToFirst()){
+                    do{
+                        String data = cursor.getString(cursor.getColumnIndex("subject"));
+                       list.add(data);
+
+                    }while(cursor.moveToNext());
                 }
-                else url = "https://source.unsplash.com/random";
+               // User u = new User(username , list);
                 cursor.close();
+                String username = "";
+                 for (int i=0; i<email.length(); i++) {
+                    char c = email.charAt(i);
 
-                Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
+                    if(c == '@') break;
+                    if(c == '.' || c == '#' || c == '$' || c == '[' || c == ']' ) ;
+                    else username += Character.toString(c);
 
-                if(isOnline()){
-                    new SetWallpaperTask().execute();
-                } else{
-                    Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
+                }
+                ref.child(username).setValue(list);
+
+
+               // Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
+
+                if (isOnline()) {
+
+                    setWallpaperTask.url = url;
+                    setWallpaperTask.execute();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error Connecting to server", Toast.LENGTH_LONG).show();
 
                 }
                 Intent main = new Intent(AddMoodActivity.this, MoodListActivity.class)
@@ -114,6 +143,28 @@ public class AddMoodActivity extends Activity implements OnClickListener {
 
                 startActivity(main);
                 break;
+            case R.id.btn_speak:
+                Intent intent = new Intent(this, SpeechToText.class);
+
+                startActivityForResult(intent, REQ_CODE);
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REQ_CODE: {
+                if (resultCode == RESULT_OK && null != data) {
+
+                    String string = data.getStringExtra("term");
+                    subjectEditText.setText(string);
+                }
+                break;
+            }
+
         }
     }
 
@@ -155,46 +206,6 @@ public class AddMoodActivity extends Activity implements OnClickListener {
         client.disconnect();
     }
 
-    public class SetWallpaperTask extends AsyncTask <String, Void, Bitmap> {
-
-        @Override
-        protected Bitmap doInBackground(String... params) {
-            Bitmap result= null;
-
-            try {
-                result = Picasso.with(getApplicationContext())
-                        .load(url)
-                        .get();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute (Bitmap result) {
-            super.onPostExecute(result);
-
-            WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
-            try {
-                wallpaperManager.setBitmap(result);
-
-                Toast.makeText(getApplicationContext(), "Set wallpaper successfully", Toast.LENGTH_LONG).show();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        @Override
-        protected void onPreExecute () {
-            super.onPreExecute();
-
-            progressDialog = new ProgressDialog(AddMoodActivity.this);
-            progressDialog.setMessage("Please wait...");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
-        }
-    }
     public boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();

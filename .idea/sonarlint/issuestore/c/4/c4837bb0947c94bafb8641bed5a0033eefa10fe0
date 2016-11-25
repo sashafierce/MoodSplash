@@ -1,0 +1,26 @@
+
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×“¾ñùÿÿÿÿ8şèÙ¦‰+
+hsquid:UselessImportCheck"?Remove this unused import 'com.google.firebase.database.Query'.(ş¶Å®8Şş·š‰+
+xsquid:S1188"\Reduce this anonymous class number of lines from 21 to at most 20, or make it a named class.(à—ÈŠ8üÖ²‰+
+Wsquid:UselessImportCheck".Remove this unused import 'java.util.Objects'.(¼¸õ›8õáÉš‰+
+qsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Æ¨ 8“°İ¦‰+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(óæøÄüÿÿÿÿ8Áîş—‰+
+wsquid:S1450"[Remove the "firebaseAuth" field and declare it as a local variable in the relevant methods.(“ø8€ÁÚ¦‰+
+tsquid:S00116"RRename this field "ETemail" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëúÏŒÿÿÿÿÿ8µäĞ‰‰+
+qsquid:UselessImportCheck"CRemove this unused import 'android.database.sqlite.SQLiteDatabase'.(ãµèÈùÿÿÿÿ8€ÁÚ¦‰+
+xsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆôÂÎûÿÿÿÿ8İÌ§‰+
+}squid:S1188"\Reduce this anonymous class number of lines from 45 to at most 20, or make it a named class.(Ş§ö©úÿÿÿÿ8üÖ²‰+
+lsquid:UselessImportCheck"ERemove this unused import 'android.support.v7.app.AppCompatActivity'.(«Û®ûüÿÿÿÿ
+Hsquid:S1068",Remove this unused "childref" private field.( ·×8µÄÆ¦‰+
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ8şèÙ¦‰+
+Xsquid:UselessImportCheck"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8µ¦Ù›‰+
+Lsquid:S1068"0Remove this unused "firebaseAuth" private field.(“ø8€ÁÚ¦‰+
+‹squid:S1151"jReduce this switch case number of lines from 15 to at most 5, for example by extracting code into methods.(şµ¡İüÿÿÿÿ8“°İ¦‰+
+vsquid:S1067"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8“°İ¦‰+
+Nsquid:S1068"2Remove this unused "databaseHelper" private field.(–Ø¯8€ÁÚ¦‰+
+psquid:UselessImportCheck"BRemove this unused import 'com.google.firebase.auth.FirebaseUser'.(’àíĞùÿÿÿÿ8€ÁÚ¦‰+
+tsquid:UselessImportCheck"LRemove this unused import 'com.google.firebase.database.ChildEventListener'.(§ŞÔ.8Şş·š‰+
+Ksquid:EmptyStatementUsageCheck"Remove this empty statement.(óÜ¾’8“°İ¦‰+
+=squid:S1643"Use a StringBuilder instead.(Õ‘æÀúÿÿÿÿ8ŒÌœ¬‰+
+ysquid:S1450"]Remove the "databaseHelper" field and declare it as a local variable in the relevant methods.(–Ø¯8€ÁÚ¦‰+
+ysquid:S1450"XRemove the "followBtn" field and declare it as a local variable in the relevant methods.(ÌÈñìşÿÿÿÿ8ÅÔï¦‰+

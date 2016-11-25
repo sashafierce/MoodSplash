@@ -22,9 +22,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModifyMoodActivity extends Activity implements OnClickListener {
 
@@ -34,15 +40,19 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
     String appendUrl;
     String url;
     StringBuilder sb;
+    int length , height ;
     String baseUrl = "https://source.unsplash.com/600x750/?";
     ProgressDialog progressDialog;
-
+    String term;
+    private List<String> list ;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference ref;
     Cursor cursor;
 
     private DatabaseHelper databaseHelper;
     private long _id;
     private DBManager dbManager;
-
+    SetWallpaper setWallpaperTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,55 +63,41 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
         sb = new StringBuilder();
         dbManager = new DBManager(this);
         dbManager.open();
-
         databaseHelper = new DatabaseHelper(this);
 
-        titleText = (EditText) findViewById(R.id.subject_edittext);
+       // titleText = (EditText) findViewById(R.id.subject_edittext);
 
         updateBtn = (Button) findViewById(R.id.btn_update);
         deleteBtn = (Button) findViewById(R.id.btn_delete);
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
-        String name = intent.getStringExtra("title");
-
+        term = intent.getStringExtra("title");
 
         _id = Long.parseLong(id);
 
-        titleText.setText(name);
+      //  titleText.setText(name);
+        ref =  FirebaseDatabase.getInstance().getReference();
+        firebaseAuth = FirebaseAuth.getInstance();
+        list = new ArrayList<String>();
 
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
+        setWallpaperTask = new SetWallpaper(getApplicationContext() , getBaseContext() , this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_update:
-                String title = titleText.getText().toString();
+               // String title = titleText.getText().toString();
 
-                dbManager.update(_id, title);
-                SQLiteDatabase db = databaseHelper.getReadableDatabase();
-                String query =  "SELECT * FROM MOODS ORDER BY RANDOM() LIMIT 1";
-                Log.d("Query " ,query);
-                // Toast.makeText(getApplicationContext(), query , Toast.LENGTH_LONG).show();
-                cursor = db.rawQuery(query,null);
+                url = baseUrl + term;
 
-                if (cursor != null) {
-                    cursor.moveToFirst();
-                    sb = new StringBuilder();
-                    sb.append("");
-                    if(cursor.moveToFirst())
-                        sb.append(cursor.getString(cursor.getColumnIndex("subject")) );
-                    appendUrl = sb.toString();
-                    url = baseUrl + appendUrl;
-                }
-                else url = "https://source.unsplash.com/random";
-                cursor.close();
-
-                Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), url , Toast.LENGTH_LONG).show();
                 if(isOnline()){
-                    new SetWallpaperTask().execute();
+                    setWallpaperTask.url = url;
+                    setWallpaperTask.execute();
                 } else{
                     Toast.makeText(getApplicationContext(),"Error Connecting to server",Toast.LENGTH_LONG).show();
 
@@ -114,6 +110,31 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
 
             case R.id.btn_delete:
                 dbManager.delete(_id);
+                //Firebase data update
+                FirebaseUser user = firebaseAuth.getInstance().getCurrentUser();
+                String email = user.getEmail();
+                cursor = dbManager.fetch();
+
+                if (cursor.moveToFirst()){
+                    do{
+                        String data = cursor.getString(cursor.getColumnIndex("subject"));
+                        list.add(data);
+
+                    }while(cursor.moveToNext());
+                }
+                // User u = new User(username , list);
+                cursor.close();
+                String username = "";
+                for (int i=0; i<email.length(); i++) {
+                    char c = email.charAt(i);
+
+                    if(c == '@') break;
+                    if(c == '.' || c == '#' || c == '$' || c == '[' || c == ']' ) ;
+                    else username += Character.toString(c);
+
+                }
+                ref.child(username).setValue(list);
+
                 this.returnHome();
                 break;
         }
@@ -124,48 +145,7 @@ public class ModifyMoodActivity extends Activity implements OnClickListener {
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(home_intent);
     }
-    public class SetWallpaperTask extends AsyncTask <String, Void, Bitmap> {
 
-        @Override
-        protected Bitmap doInBackground(String... params) {
-            Bitmap result= null;
-
-            try {
-                result = Picasso.with(getApplicationContext())
-                        .load(url)
-                        .get();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute (Bitmap result) {
-            super.onPostExecute(result);
-
-            WallpaperManager wallpaperManager = WallpaperManager.getInstance(getBaseContext());
-            try {
-                wallpaperManager.setBitmap(result);
-
-                Toast.makeText(getApplicationContext(), "Set wallpaper successfully", Toast.LENGTH_LONG).show();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        @Override
-        protected void onPreExecute () {
-            super.onPreExecute();
-
-            progressDialog = new ProgressDialog(ModifyMoodActivity.this);
-            progressDialog.setMessage("Please wait...");
-            progressDialog.setCancelable(false);
-            progressDialog.show();
-        }
-    }
     public boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();

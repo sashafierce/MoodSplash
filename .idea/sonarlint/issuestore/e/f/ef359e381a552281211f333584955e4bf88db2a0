@@ -1,0 +1,32 @@
+
+š squid:MethodCyclomaticComplexity"dThe Cyclomatic Complexity of this method "onItemSelected" is 17 which is greater than 10 authorized.(‰İÉ£üÿÿÿÿ8Ó×™Ò‰+
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(½áØÔùÿÿÿÿ
+:squid:S1659" Declare "s2" on a separate line.(ß’Çïıÿÿÿÿ
+Tsquid:UselessImportCheck"3Remove this unused import 'android.content.Intent'.(³ğ‹G
+@squid:UselessImportCheck"Remove this duplicated import.(‡ÊÍÆ
+Nsquid:S1135"2Complete the task associated to this TODO comment.(‡ñÅ¼8ë‡­Ò‰+
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğ˜‰ûûÿÿÿÿ
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(½áØÔùÿÿÿÿ8ÆğßÑ‰+
+i
+squid:S134"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(íÒÖŒ8”Ì±Ò‰+
+}squid:S1188"\Reduce this anonymous class number of lines from 29 to at most 20, or make it a named class.(’éúıÿÿÿÿ8”Ì±Ò‰+
+]squid:S2259"ANullPointerException might be thrown as 'cursor' is nullable here(®¶ëü8”Ì±Ò‰+
+Lsquid:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+n
+squid:S134"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(¶ùÕ“øÿÿÿÿ8”Ì±Ò‰+
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(½áØÔùÿÿÿÿ
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğ˜‰ûûÿÿÿÿ
+Lsquid:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Asquid:S1166"%Either log or rethrow this exception.(”ı¾8ë‡­Ò‰+
+Esquid:UselessImportCheck"Remove this duplicated import.(°şÊóøÿÿÿÿ
+esquid:HiddenFieldCheck"9Rename "timer" which hides the field declared at line 43.(ñò”°úÿÿÿÿ8£ëŠÒ‰+
+xsquid:S1188"\Reduce this anonymous class number of lines from 51 to at most 20, or make it a named class.(ÄÏÏ¢8Ó×™Ò‰+
+Lsquid:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Ksquid:S1481"*Remove this unused "timer" local variable.(ñò”°úÿÿÿÿ8£ëŠÒ‰+
+tsquid:S1450"XRemove the "dbManager" field and declare it as a local variable in the relevant methods.(ã€°8£ëŠÒ‰+
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(½áØÔùÿÿÿÿ
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğ˜‰ûûÿÿÿÿ
+Zsquid:S1854"9Remove this useless assignment to local variable "timer".(ñò”°úÿÿÿÿ8£ëŠÒ‰+
+xsquid:S1188"\Reduce this anonymous class number of lines from 43 to at most 20, or make it a named class.(ÉãÃ®8Ó×™Ò‰+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ùí†Œ8ë‡­Ò‰+
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğ˜‰ûûÿÿÿÿ8ÆğßÑ‰+

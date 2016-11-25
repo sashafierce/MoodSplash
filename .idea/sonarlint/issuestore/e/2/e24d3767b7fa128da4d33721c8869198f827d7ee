@@ -1,0 +1,46 @@
+
+Jsquid:S1135Å"2Complete the task associated to this TODO comment.(Ú•õµ
+\squid:UselessImportCheck"9Remove this unused import 'android.app.WallpaperManager'.(÷¡ï
+ssquid:UselessImportCheck
+"CRemove this unused import 'android.database.sqlite.SQLiteDatabase'.(ãµèÈùÿÿÿÿ8ß‘·‰+
+†squid:S1151b"jReduce this switch case number of lines from 47 to at most 5, for example by extracting code into methods.(ÚÙıÿÿÿÿ
+Qsquid:S1135´"2Complete the task associated to this TODO comment.(ÂÍÄ×8İ¨×¹‰+
+osquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(×ö³–úÿÿÿÿ8¿ë»‰+
+lsquid:UselessImportCheck"<Remove this unused import 'android.speech.RecognizerIntent'.(›î™¯üÿÿÿÿ8ûŞì»‰+
+Ysquid:UselessImportCheck&"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
+Zsquid:UselessImportCheck'"1Remove this unused import 'java.io.Serializable'.(èãîÂÿÿÿÿÿ
+{squid:S1450;"]Remove the "databaseHelper" field and declare it as a local variable in the relevant methods.(–Ø¯8ß‘·‰+
+Osquid:S1135²"2Complete the task associated to this TODO comment.(€±ıÿÿÿÿ
+Qsquid:S1135Æ"2Complete the task associated to this TODO comment.(ÂÍÄ×8İ¨×¹‰+
+U"squid:SwitchLastCaseIsDefaultChecka""Add a default case to this switch.(×“¾ñùÿÿÿÿ
+{squid:S14507"XRemove the "speechBtn" field and declare it as a local variable in the relevant methods.(š´Æ¸üÿÿÿÿ8¬Äï·‰+
+\squid:UselessImportCheck)"8Remove this unused import 'java.util.GregorianCalendar'.(€û½
+Osquid:S1135Ê"2Complete the task associated to this TODO comment.(Ãá•şÿÿÿÿ
+xsquid:S00116B"TRename this field "RESULT_OK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êšƒöÿÿÿÿÿ8È¿Ë»‰+
+Xsquid:S2209j"5Change this instance-reference to a static reference.(úÑÙ×úÿÿÿÿ8ïª¦‰+
+xsquid:S1067|"ZReduce the number of conditional operators (4) used in the expression (maximum allowed 3).(óÜ¾’8º«…™‰+
+]squid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8ß‘·‰+
+Usquid:UselessImportCheck"1Remove this unused import 'android.os.AsyncTask'.(À»¥—
+psquid:S14506"YRemove the "addTodoBtn" field and declare it as a local variable in the relevant methods.(„Šç¦
+Osquid:S1135¸"2Complete the task associated to this TODO comment.(Ãá•şÿÿÿÿ
+]"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(×ö³–úÿÿÿÿ8¿ë»‰+
+^squid:UselessImportCheck"5Remove this unused import 'android.app.AlarmManager'.(°­éıÿÿÿÿ
+Dsquid:S1170B"!Make this final field static too.(êšƒöÿÿÿÿÿ8È¿Ë»‰+
+Zsquid:UselessImportCheck"6Remove this unused import 'android.app.PendingIntent'.(šºŞ—
+ssquid:S00122{"TAt most one statement is allowed per line, but 2 statements were found on this line.(¾Æ¨ 8º«…™‰+
+Osquid:S1135Ä"2Complete the task associated to this TODO comment.(€±ıÿÿÿÿ
+Jsquid:S1135³"2Complete the task associated to this TODO comment.(Ú•õµ
+]squid:UselessImportCheck!"9Remove this unused import 'com.squareup.picasso.Picasso'.(£œ¿×
+Msquid:EmptyStatementUsageCheck|"Remove this empty statement.(óÜ¾’8º«…™‰+
+?squid:S1643}"Use a StringBuilder instead.(Õ‘æÀúÿÿÿÿ8º«…™‰+
+isquid:UselessImportCheck">Remove this unused import 'android.content.BroadcastReceiver'.(Ãğõğ8¬Äï·‰+
+ squid:MethodCyclomaticComplexity`"]The Cyclomatic Complexity of this method "onClick" is 13 which is greater than 10 authorized.(¡é††8º«…™‰+
+Psquid:S1068;"2Remove this unused "databaseHelper" private field.(–Ø¯8ß‘·‰+
+Asquid:S10689"*Remove this unused "target" private field.(Öß¯
+Qsquid:S1199Ÿ"-Extract this nested code block into a method.(ôéáşÿÿÿÿ8¿ë»‰+
+psquid:ModifiersOrderCheck@"EReorder the modifiers to comply with the Java Language Specification.(µêÎ:8İ¨×¹‰+
+gsquid:S1301a"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ
+jsquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(Ò¼öÉ8Åş×Š‰+
+squid:S1151Ÿ"iReduce this switch case number of lines from 9 to at most 5, for example by extracting code into methods.(ôéáşÿÿÿÿ8¿ë»‰+
+|squid:S2293P"YReplace the type specification in this constructor call with the diamond operator ("<>").(óæøÄüÿÿÿÿ8Ìàƒ—‰+
+nsquid:CommentedOutCodeLineu"<This block of commented-out lines of code should be removed.(ôÃãıÿÿÿÿ8Ä’Ä˜‰+
