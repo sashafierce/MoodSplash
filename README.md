@@ -1,8 +1,8 @@
 # MoodSplash (built for IIITA Hacks Hackathon)
 
-> An Android app which syncs your mood with your phone's wallpaper using high resoluton images from Unsplash.com
+ An Android app which syncs your mood with your phone's wallpaper using high resoluton images from Unsplash.com
 
-# Features
+## Features
 - Fetch wallpapers related to terms specified by user
 - Set random high resolution wallpaper
 - Sync lists of different users
